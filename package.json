@@ -1,6 +1,6 @@
 {
   "name": "music-metadata-browser",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Browserifed version of music-metadata",
   "main": "dist/music-metadata.js",
   "repository": "https://github.com/Borewit/music-metadata-browser.git",
