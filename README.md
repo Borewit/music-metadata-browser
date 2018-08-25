@@ -6,7 +6,7 @@
 
 # music-metadata-browser
 
-[music-metadata](https://github.com/Borewit/music-metadata)) release for the browser.
+[music-metadata](https://github.com/Borewit/music-metadata) release for the browser.
 
 ## Usage
 
