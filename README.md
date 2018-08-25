@@ -1,7 +1,10 @@
-music-metadata release for the browser
+# music-metadata-browser
 
-## ToDo
+[music-metadata](https://github.com/Borewit/music-metadata)) release for the browser.
 
-Currenttly only a placeholder
+## Usage
+
+Check the [audio-tag-analyzer](https://github.com/Borewit/audio-tag-analyzer) how it can be used.
+
 
 
