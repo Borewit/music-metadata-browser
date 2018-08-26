@@ -44,7 +44,7 @@
     "url": "https://github.com/Borewit/music-metadata-browser/issues"
   },
   "scripts": {
-    "postinstall": "npm run build",
+    "prepublishOnly": "npm run build",
     "build": "npm run build-library",
     "build-library": "webpack --config=config/webpack.library.js",
     "analyze": "webpack --config=config/webpack.bundle-analyzer.js"
