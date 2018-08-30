@@ -1,5 +1,5 @@
-const path = require("path");
-const webpack = require("webpack");
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   name: 'music-metadata',
@@ -11,11 +11,11 @@ module.exports = {
     new webpack.IgnorePlugin(/fs/, /debug/)
   ],
   entry: {
-    bundle: "./node_modules/music-metadata/lib/index.js"
+    bundle: './node_modules/music-metadata/lib/index.js'
   },
   output: {
-    path: path.resolve(__dirname, "../dist"),
-    filename: "music-metadata.js",
-    libraryTarget: "umd"
+    path: path.resolve(__dirname, '../dist'),
+    filename: 'music-metadata.js',
+    libraryTarget: 'umd'
   }
 };
