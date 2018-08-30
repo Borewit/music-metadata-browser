@@ -1,8 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
 
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-
 module.exports = {
   name: 'music-metadata',
   mode: 'production',
@@ -10,17 +8,7 @@ module.exports = {
     fs: 'empty'
   },
   plugins: [
-    new webpack.IgnorePlugin(/fs/, /debug/),
-    new UglifyJsPlugin({
-      sourceMap: true,
-      parallel: true,
-      uglifyOptions: {
-        compress: {
-          // Workaround: https://github.com/mishoo/UglifyJS2/issues/2842
-          inline: false
-        }
-      }
-    }),
+    new webpack.IgnorePlugin(/fs/, /debug/)
   ],
   entry: {
     bundle: "./node_modules/music-metadata/lib/index.js"
