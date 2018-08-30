@@ -3,6 +3,7 @@
   "version": "0.0.4",
   "description": "Browserifed version of music-metadata",
   "main": "dist/music-metadata.js",
+  "typings": "dist/index",
   "repository": "https://github.com/Borewit/music-metadata-browser.git",
   "author": {
     "name": "Borewit",
@@ -50,7 +51,7 @@
     "analyze": "webpack --config=config/webpack.bundle-analyzer.js"
   },
   "devDependencies": {
-    "music-metadata": "^2.6.0",
+    "music-metadata": "^2.6.1",
     "webpack": "^4.12.1",
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.0.8",

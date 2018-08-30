@@ -1714,9 +1714,9 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-music-metadata@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-2.6.0.tgz#a913a3a1de73b965158c243a5e188be9ec901ff9"
+music-metadata@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-2.6.1.tgz#bfdf24f4620f8f929e278d72ef9f29ef5b347b36"
   dependencies:
     debug "^3.1.0"
     es6-promise "^4.2.4"
@@ -1724,7 +1724,7 @@ music-metadata@^2.6.0:
     media-typer "^0.3.0"
     strtok3 "^1.5.3"
     then-read-stream "^1.2.1"
-    token-types "^0.9.4"
+    token-types "^0.10.0"
 
 mute-stream@0.0.7:
   version "0.0.7"
@@ -2516,13 +2516,13 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
 strtok3@^1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-1.5.3.tgz#a788ce5b43cd5365d61ae9c7620113b2c94c068f"
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-1.5.4.tgz#b96590a36a78c9acabbf5590d779b5cabf809efc"
   dependencies:
     debug "^3.1.0"
     es6-promise "^4.2.4"
     then-read-stream "^1.2.1"
-    token-types "^0.9.4"
+    token-types "^0.10.0"
 
 supports-color@^5.3.0, supports-color@^5.4.0:
   version "5.4.0"
@@ -2601,9 +2601,9 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
-token-types@^0.9.4:
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/token-types/-/token-types-0.9.4.tgz#ea24c5c3fc577292a1d362a252e348a0016361ad"
+token-types@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/token-types/-/token-types-0.10.0.tgz#b45ac19ede381ff58fc818d760f7113a6158693b"
 
 tryer@^1.0.0:
   version "1.0.1"
