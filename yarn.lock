@@ -1783,15 +1783,15 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-music-metadata@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-2.6.1.tgz#bfdf24f4620f8f929e278d72ef9f29ef5b347b36"
+music-metadata@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-2.6.2.tgz#bac161d4f976a2fe489d6de762008e4226964c08"
   dependencies:
     debug "^3.1.0"
     es6-promise "^4.2.4"
     file-type "9"
     media-typer "^0.3.0"
-    strtok3 "^1.5.3"
+    strtok3 "^1.5.4"
     then-read-stream "^1.2.1"
     token-types "^0.10.0"
 
@@ -2584,7 +2584,7 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-strtok3@^1.5.3:
+strtok3@^1.5.4:
   version "1.5.4"
   resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-1.5.4.tgz#b96590a36a78c9acabbf5590d779b5cabf809efc"
   dependencies:
