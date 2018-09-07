@@ -111,7 +111,7 @@ It is recommended to provide the corresponding [MIME-type](https://developer.moz
 An extension (e.g.: `.mp3`), filename or path will also work.
 If the MIME-type or filename is not provided, or not understood, music-metadata will try to derive the type from the content.
 
-```TypeScript
+```javascript
 import * as mm from 'music-metadata-browser';
 
 mm.parseStream(someReadStream, 'audio/mpeg', { fileSize: 26838 })
@@ -122,7 +122,7 @@ mm.parseStream(someReadStream, 'audio/mpeg', { fileSize: 26838 })
 ```
 
 The Web API [File interface](https://developer.mozilla.org/en-US/docs/Web/API/File) can be converted into a stream.
-```TypeScript
+```javascript
 import fileReaderStream from 'filereader-stream';
 import * as mm from 'music-metadata-browser';
 
@@ -143,7 +143,7 @@ To convert the [File](https://developer.mozilla.org/en-US/docs/Web/API/File) int
 
 If you wish to stream your audio track over HTTP you may want to use [stream-http](https://www.npmjs.com/package/stream-stream):
 
-```TypeScript
+```javascript
 import * as mm from 'music-metadata-browser';
 import http from "stream-http";
 
@@ -170,7 +170,7 @@ httpToStream(url).then(stream => {
 
 Utility to Converts the native tags to a dictionary index on the tag identifier
 
-```TypeScript
+```javascript
 orderTags(nativeTags: ITag[]): [tagId: string]: any[]
 ```
 
@@ -178,7 +178,7 @@ orderTags(nativeTags: ITag[]): [tagId: string]: any[]
 
 Can be used to convert the normalized rating value to the 0..5 stars, where 0 an undefined rating, 1 the star the lowest rating and 5 the highest rating.
 
-```TypeScript
+```javascript
 ratingToStars(rating: number): number
 ```
 
