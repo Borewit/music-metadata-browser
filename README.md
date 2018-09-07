@@ -1,8 +1,7 @@
 [![Build Status](https://travis-ci.org/Borewit/music-metadata-browser.svg?branch=master)](https://travis-ci.org/Borewit/music-metadata-browser)
 [![NPM version](https://badge.fury.io/js/music-metadata-browser.svg)](https://npmjs.org/package/music-metadata-browser)
 [![npm downloads](http://img.shields.io/npm/dm/music-metadata-browser.svg)](https://npmjs.org/package/music-metadata-browser)
-[![Dependencies](https://david-dm.org/Borewit/music-metadata-browser.svg)](https://david-dm.org/Borewit/music-metadata-browser)
-
+[![dependencies Status](https://david-dm.org/Borewit/music-metadata-browser/status.svg)](https://david-dm.org/Borewit/music-metadata-browser)
 # music-metadata-browser
 
 [music-metadata](https://github.com/Borewit/music-metadata) release for the browser.
@@ -23,7 +22,7 @@
 | FLAC          | Free Lossless Audio Codec      | [:link:](https://wikipedia.org/wiki/FLAC)                          | <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Flac_logo_vector.svg" width="80">
 | MP2           | MPEG-1 Audio Layer II          | [:link:](https://wikipedia.org/wiki/MPEG-1_Audio_Layer_II)         |
 | MP3           | MPEG-1 / MEG-2 Audio Layer III | [:link:](https://wikipedia.org/wiki/MP3)                           | <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Mp3.svg" width="80">
-| M4A           | MPEG 4 Audi                    | [:link:](https://wikipedia.org/wiki/MPEG-4)                        |
+| M4A           | MPEG 4 Audio                   | [:link:](https://wikipedia.org/wiki/MPEG-4)                        |
 | Ogg / Opos    |                                | [:link:](https://wikipedia.org/wiki/Opus_(audio_format))           | <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Opus_logo2.svg" width="80">
 | Ogg / Speex   |                                | [:link:](https://wikipedia.org/wiki/Speex)                         | <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Speex_logo_2006.svg" width="80">
 | Ogg / Vorbis  |                                | [:link:](https://wikipedia.org/wiki/Ogg_Vorbis)                    | <img src="https://upload.wikimedia.org/wikipedia/en/a/ac/XiphophorusLogoSVG.svg" width="80">
@@ -92,28 +91,79 @@ import * as mm from 'music-metadata-browser';
 
 ### Module Functions:
 
-There are two ways to parse (read) audio tracks:
-1) Audio (music) files can be parsed using direct file access using the [parseFile function](#parsefile)
-2) Using [Node.js streams](https://nodejs.org/api/stream.html) using the [parseStream function](#parseStream).
+In the browser there is node direct file access available.
+Only the [parseStream function](#parseStream) is available.T
 
-Direct file access tends to be a little faster, because it can 'jump' to various parts in the file without being obliged to read intermediate date.
+```javascript
+import * as mm from 'music-metadata-browser';
 
-#### parseStream function
+mm.parseStream(readableStream)
+  .then( metadata => {
+     console.log(util.inspect(metadata, { showHidden: false, depth: null }));
+     readableStream.close();
+   });
+```
+The readable stream is derived from [Node's readable stream](https://nodejs.org/api/stream.html#stream_readable_streams).
 
-Parses the provided audio stream for metadata.
+If available, pass the mime-type and file-size. Without the mime-type, the content will be audio type will be automatically detected.
+
 It is recommended to provide the corresponding [MIME-type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types). 
 An extension (e.g.: `.mp3`), filename or path will also work.
 If the MIME-type or filename is not provided, or not understood, music-metadata will try to derive the type from the content.
 
-`parseStream(stream: Stream.Readable, mimeType?: string, opts?: IOptions = {}): Promise<IAudioMetadata>`
+```TypeScript
+import * as mm from 'music-metadata-browser';
 
-Example:
-```javascript
 mm.parseStream(someReadStream, 'audio/mpeg', { fileSize: 26838 })
-  .then( function (metadata) {
+  .then( metadata => {
      console.log(util.inspect(metadata, { showHidden: false, depth: null }));
      someReadStream.close();
    });
+```
+
+The Web API [File interface](https://developer.mozilla.org/en-US/docs/Web/API/File) can be converted into a stream.
+```TypeScript
+import fileReaderStream from 'filereader-stream';
+import * as mm from 'music-metadata-browser';
+
+/**
+* @param file Browser File
+*/
+function readFromFile(file) {
+  const stream = fileReaderStream(file);
+
+  mm.parseStream(stream).then(metadata => {
+    // metadata has all the metadata found in file
+  });
+}
+```
+
+To convert the [File](https://developer.mozilla.org/en-US/docs/Web/API/File) into a [stream](https://nodejs.org/api/stream.html#stream_readable_streams), 
+[filereader-stream](https://www.npmjs.com/package/filereader-stream) is used.
+
+If you wish to stream your audio track over HTTP you may want to use [stream-http](https://www.npmjs.com/package/stream-stream):
+
+```TypeScript
+import * as mm from 'music-metadata-browser';
+import http from "stream-http";
+
+/**
+* @param url Ensure the source the URL is pointing to, meets the CORS requirements
+*/
+function httpToStream(url) {
+  return new Promise(resolve => {
+    http.get(url, stream => {
+      resolve(stream);
+    });
+  });
+}
+
+/**
+* Stream over HTTP from URL
+*/
+httpToStream(url).then(stream => {
+  mm.parseStream(stream, stream.headers["content-type"]);
+});
 ```
 
 #### orderTags function
@@ -171,17 +221,6 @@ If the returned promise resolves, the metadata (TypeScript `IAudioMetadata` inte
 #### Common
 
 [Common tag documentation](doc/common_metadata.md) is automatically generated.
-
-## Examples
-
-In order to read the duration of a stream (with the exception of file streams), in some cases you should pass the size of the file in bytes.
-```javascript
-mm.parseStream(someReadStream, 'audio/mpeg', { duration: true, fileSize: 26838 })
-  .then( function (metadata) {
-     console.log(util.inspect(metadata, { showHidden: false, depth: null }));
-     someReadStream.close();
-   });
-```
 
 ## Licence
 
