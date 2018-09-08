@@ -1,6 +1,6 @@
 {
   "name": "music-metadata-browser",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Browserifed version of music-metadata",
   "main": "dist/music-metadata.js",
   "typings": "dist/index",
