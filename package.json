@@ -1,6 +1,6 @@
 {
   "name": "music-metadata-browser",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Browserifed version of music-metadata",
   "main": "dist/music-metadata.js",
   "typings": "dist/index",
@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "dts-bundle": "^0.7.3",
-    "music-metadata": "^2.6.2",
+    "music-metadata": "^2.7.1",
     "webpack": "^4.12.1",
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.0.8",

@@ -438,13 +438,6 @@ buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
-buffer@^5.2.1:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.2.1.tgz#dd57fa0f109ac59c602479044dca7b8b3d0b71d6"
-  dependencies:
-    base64-js "^1.0.2"
-    ieee754 "^1.1.4"
-
 builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
@@ -1790,9 +1783,9 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-music-metadata@^2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-2.6.2.tgz#bac161d4f976a2fe489d6de762008e4226964c08"
+music-metadata@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-2.7.1.tgz#62313342cabaed0a9a27b9081bfa005d255d0297"
   dependencies:
     debug "^3.1.0"
     es6-promise "^4.2.4"
