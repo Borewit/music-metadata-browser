@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+   "sourceMap": false,
+    "inlineSources": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "target": "es6",
+    "outDir": "../dist",
+    "types" : ["music-metadata"]
+  }
+}
+

@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
   name: 'music-metadata',
-  mode: 'production',
+  mode: 'development',
   node: {
     fs: 'empty'
   },
@@ -13,6 +13,7 @@ module.exports = {
   entry: {
     bundle: './src/index'
   },
+  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'music-metadata.js',
