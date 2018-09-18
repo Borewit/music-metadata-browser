@@ -1,13 +1,14 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-   "sourceMap": false,
-    "inlineSources": false,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "declaration": true,
-    "target": "es6",
     "outDir": "../dist",
-    "types" : ["music-metadata"]
+    "sourceMap": false,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   }
 }
 
