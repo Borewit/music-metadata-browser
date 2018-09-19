@@ -46,15 +46,9 @@ Support for [MusicBrainz](https://musicbrainz.org/) tags as written by [Picard](
   * Duration
   * encoding profile (e.g. [CBR](https://en.wikipedia.org/wiki/Constant_bitrate), V0, V2)
   
-
 ### Online demo's
 * [Audio Tag Analyzer](https://audio-tag-analyzer.netlify.com/)
 * [Webamp powered with music-metadata](https://music-metadata-webamp.netlify.com/)
-
-### Browser Support
-
-Although music-metadata is designed to run in Node.js, it can also be used to run in the browser:
-* [music-metadata-browser](https://github.com/Borewit/music-metadata-browser) is an experimental version which can be used in the browser.
 
 ### Donation
 Not required, but would be extremely motivating.
