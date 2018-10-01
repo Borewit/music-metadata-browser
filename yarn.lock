@@ -578,9 +578,9 @@ ms@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
-music-metadata@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-3.1.0.tgz#4340a4148dff9567a6f7b0139bf1ce3add88d0da"
+music-metadata@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-3.1.1.tgz#80eccd1aa38bf6f03edc5e2c8176202b6b2c8afc"
   dependencies:
     debug "^4.0.1"
     file-type "9"
@@ -900,7 +900,7 @@ tslib@^1.8.0, tslib@^1.8.1:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
 
-tslint@^5.11.0:
+"tslint@^5.11.0 ":
   version "5.11.0"
   resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.11.0.tgz#98f30c02eae3cde7006201e4c33cb08b48581eed"
   dependencies:
