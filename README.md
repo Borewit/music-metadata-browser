@@ -2,6 +2,9 @@
 [![NPM version](https://badge.fury.io/js/music-metadata-browser.svg)](https://npmjs.org/package/music-metadata-browser)
 [![npm downloads](http://img.shields.io/npm/dm/music-metadata-browser.svg)](https://npmjs.org/package/music-metadata-browser)
 [![dependencies Status](https://david-dm.org/Borewit/music-metadata-browser/status.svg)](https://david-dm.org/Borewit/music-metadata-browser)
+[![Coverage Status](https://coveralls.io/repos/github/Borewit/music-metadata-browser/badge.svg?branch=master)](https://coveralls.io/github/Borewit/music-metadata-browser?branch=master)
+![NPM version](https://img.shields.io/bundlephobia/min/music-metadata-browser.svg)
+
 # music-metadata-browser
 
 [music-metadata](https://github.com/Borewit/music-metadata) release for the browser.
@@ -81,8 +84,30 @@ import * as mm from 'music-metadata-browser';
 
 ### Module Functions:
 
-In the browser there is node direct file access available.
-Only the [parseStream function](#parseStream) is available.T
+There are currently two ways to parse (read) audio tracks:
+1) parsing a Web API blob or file with the  [parseBlob function](#parseBlob).
+2) Using [Node.js streams](https://nodejs.org/api/stream.html) using the [parseStream function](#parseStream).
+
+#### parseBlob function
+
+To convert a [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) or [File](https://developer.mozilla.org/en-US/docs/Web/API/File) into a [stream](https://nodejs.org/api/stream.html#stream_readable_streams), 
+[filereader-stream](https://www.npmjs.com/package/filereader-stream) is used.
+```javascript
+import * as mm from 'music-metadata-browser';
+
+/**
+* @param blob Blob (e.g. Web API File)
+*/
+function readFromBlob(blob) {
+  
+  // blob is a Web API Blob or File
+  mm.parseBlob(blob).then(metadata => {
+    // metadata has all the metadata found in the blob or file
+  });
+}
+```
+ 
+#### parseStream function
 
 ```javascript
 import * as mm from 'music-metadata-browser';
@@ -111,27 +136,7 @@ mm.parseStream(someReadStream, 'audio/mpeg', { fileSize: 26838 })
    });
 ```
 
-The Web API [File interface](https://developer.mozilla.org/en-US/docs/Web/API/File) can be converted into a stream.
-```javascript
-import fileReaderStream from 'filereader-stream';
-import * as mm from 'music-metadata-browser';
-
-/**
-* @param file Browser File
-*/
-function readFromFile(file) {
-  const stream = fileReaderStream(file);
-
-  mm.parseStream(stream).then(metadata => {
-    // metadata has all the metadata found in file
-  });
-}
-```
-
-To convert the [File](https://developer.mozilla.org/en-US/docs/Web/API/File) into a [stream](https://nodejs.org/api/stream.html#stream_readable_streams), 
-[filereader-stream](https://www.npmjs.com/package/filereader-stream) is used.
-
-If you wish to stream your audio track over HTTP you may want to use [stream-http](https://www.npmjs.com/package/stream-stream):
+If you wish to stream your audio track over HTTP you need HTTP-client which provides a stream like  [stream-http](https://www.npmjs.com/package/stream-stream):
 
 ```javascript
 import * as mm from 'music-metadata-browser';

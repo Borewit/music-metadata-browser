@@ -31,22 +31,22 @@ export const parseBuffer = mm.parseBuffer;
 
 /**
  * Parse Web API File
- * @param {File} file
+ * @param {Blob} blob
  * @param {IOptions} options Parsing options
  * @returns {Promise<IAudioMetadata>}
  */
-export function parseFile(file: File, options?: IOptions): Promise<IAudioMetadata> {
-  return convertFileToBuffer(file).then(buf => {
-    return mm.parseBuffer(buf, file.type, options);
+export function parseBlob(blob: Blob, options?: IOptions): Promise<IAudioMetadata> {
+  return convertBlobToBuffer(blob).then(buf => {
+    return mm.parseBuffer(buf, blob.type, options);
   });
 }
 
 /**
  * Convert Web API File to Node Buffer
- * @param {File} file Web API File
+ * @param {Blob} blob Web API Blob
  * @returns {Promise<Buffer>}
  */
-function convertFileToBuffer(file: File): Promise<Buffer> {
+function convertBlobToBuffer(blob: Blob): Promise<Buffer> {
   return new Promise<Buffer>((resolve, reject) => {
 
     const fileReader = new FileReader();
@@ -63,7 +63,7 @@ function convertFileToBuffer(file: File): Promise<Buffer> {
     fileReader.onabort = error => {
       reject(new Error(error.type));
     };
-    fileReader.readAsArrayBuffer(file);
+    fileReader.readAsArrayBuffer(blob);
   });
 }
 

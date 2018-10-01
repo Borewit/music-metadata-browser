@@ -45,17 +45,35 @@
     "url": "https://github.com/Borewit/music-metadata-browser/issues"
   },
   "scripts": {
-    "clean": "del-cli dist/** src/**/*.js src/**/*.js.map src/**/*.d.ts test/**/*.js test/**/*.js.map",
-    "compile-src": "tsc -p src",
+    "clean": "del-cli dist/** src/**/*.js src/**/*.js.map src/**/*.d.ts test/**/*.js test/**/*.js.map coverage",
+    "compile-dist": "tsc -p src/tsconfig.dist.json",
+    "compile-test": "tsc -p src/tsconfig.spec.json",
     "prepublishOnly": "yarn run build",
-    "build": "yarn run clean && yarn run compile-src",
-    "lint": "tslint 'src/**/*.ts' --exclude 'src/**/*.d.ts' 'test/**/*.ts' --exclude 'test/**/*.d.ts'"
+    "build": "npm run compile-dist && npm run compile-test",
+    "lint": "tslint 'src/**/*.ts' --exclude 'src/**/*.d.ts' 'test/**/*.ts' --exclude 'test/**/*.d.ts'",
+    "karma": "karma start",
+    "travis-karma": "karma start --browsers Firefox --single-run",
+    "post-coveralls": "coveralls < coverage/lcov.info"
   },
   "devDependencies": {
+    "@types/jasmine": "^2.8.8",
     "@types/node": "^10.9.4",
+    "coveralls": "^3.0.2",
     "del-cli": "^1.1.0",
-    "tslint": "^5.11.0 ",
-    "typescript": "^3.0.3"
+    "filereader-stream": "^2.0.0",
+    "jasmine-core": "^3.2.1",
+    "karma": "^3.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage-istanbul-reporter": "^2.0.4",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-jasmine": "^1.1.2",
+    "karma-jasmine-html-reporter": "^1.3.1",
+    "karma-webpack": "^3.0.5",
+    "stream-http": "^2.8.3",
+    "ts-loader": "^5.2.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3",
+    "webpack": "^4.20.2"
   },
   "dependencies": {
     "assert": "^1.4.1",
