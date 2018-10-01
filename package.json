@@ -54,13 +54,13 @@
   "devDependencies": {
     "@types/node": "^10.9.4",
     "del-cli": "^1.1.0",
-    "tslint": "^5.11.0",
-    "typedarray-to-buffer": "^3.1.5",
+    "tslint": "^5.11.0 ",
     "typescript": "^3.0.3"
   },
   "dependencies": {
     "assert": "^1.4.1",
     "buffer": "^5.2.1",
-    "music-metadata": "^3.1.0"
+    "music-metadata": "^3.1.0",
+    "typedarray-to-buffer": "^3.1.5"
   }
 }
