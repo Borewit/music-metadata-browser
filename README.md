@@ -2,6 +2,7 @@
 [![NPM version](https://badge.fury.io/js/music-metadata-browser.svg)](https://npmjs.org/package/music-metadata-browser)
 [![npm downloads](http://img.shields.io/npm/dm/music-metadata-browser.svg)](https://npmjs.org/package/music-metadata-browser)
 [![dependencies Status](https://david-dm.org/Borewit/music-metadata-browser/status.svg)](https://david-dm.org/Borewit/music-metadata-browser)
+[![Known Vulnerabilities](https://snyk.io/test/github/Borewit/music-metadata/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Borewit/music-metadata-browser?targetFile=package.json)
 [![Coverage Status](https://coveralls.io/repos/github/Borewit/music-metadata-browser/badge.svg?branch=master)](https://coveralls.io/github/Borewit/music-metadata-browser?branch=master)
 ![NPM version](https://img.shields.io/bundlephobia/min/music-metadata-browser.svg)
 
