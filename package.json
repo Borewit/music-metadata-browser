@@ -53,7 +53,7 @@
     "lint": "tslint 'src/**/*.ts' --exclude 'src/**/*.d.ts' 'test/**/*.ts' --exclude 'test/**/*.d.ts'",
     "karma": "karma start",
     "karma-once": "karma start --browsers Chrome --single-run",
-    "travis-karma": "karma start --browsers Firefox --single-run",
+    "travis-karma": "karma start --browsers Firefox --single-run --reporters coverage-istanbul,spec",
     "post-coveralls": "coveralls < coverage/lcov.info"
   },
   "devDependencies": {

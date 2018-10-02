@@ -10,5 +10,5 @@ script:
  - yarn run lint
  - yarn build
  - yarn run travis-karma
-after_success:
+after_script:
  - yarn run post-coveralls

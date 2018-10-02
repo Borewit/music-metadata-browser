@@ -49,13 +49,18 @@ module.exports = config => {
     // https://www.npmjs.com/package/karma-coverage-istanbul-reporter
     coverageIstanbulReporter: {
       dir: path.join(__dirname, 'coverage'),
-      reports: ['html', 'lcovonly'],
-      fixWebpackSourcePaths: true
+      reports: ['text-summary', 'lcovonly', 'html'],
+      fixWebpackSourcePaths: true,
+      'report-config': {
+        html: {
+          // outputs the report in ./coverage/html
+          subdir: 'html'
+        }
+      }
     },
     //autoWatch: true,
     browsers: ['Chrome'],
     colors: true,
     singleRun: false
-
   })
 }
