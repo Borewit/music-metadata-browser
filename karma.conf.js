@@ -1,7 +1,7 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
-const path = require('path');
+const path = require('path')
 
 module.exports = config => {
   config.set({
@@ -10,7 +10,7 @@ module.exports = config => {
       'jasmine'
     ],
     files: [
-      { pattern: 'src/**/*.spec.ts' }
+      {pattern: 'src/**/*.spec.ts'}
     ],
     preprocessors: {
       '**/*.ts': 'webpack',
@@ -18,21 +18,34 @@ module.exports = config => {
 
     webpack: {
       mode: 'development',
+      entry: './src/index.ts',
       resolve: {
-        extensions: [ '.tsx', '.ts', '.js' ]
+        extensions: ['.tsx', '.ts', '.js']
       },
+      devtool: 'inline-source-map',
       module: {
         rules: [
           {
             test: /\.ts$/,
             use: 'ts-loader',
-            exclude: /node_modules/
+            include: path.resolve('src')
+          },
+          {
+            test: /\.ts$/,
+            use: {loader: 'istanbul-instrumenter-loader'},
+            enforce: 'post',
+            include: path.resolve('src'),
+            exclude: /\.spec\.ts$/
           }
+
         ]
       },
     },
+    webpackMiddleware: {
+      noInfo: true
+    },
 
-    reporters: ['progress', 'kjhtml', 'coverage-istanbul'],
+    reporters: ['progress', 'kjhtml', 'coverage-istanbul', 'spec'],
     // https://www.npmjs.com/package/karma-coverage-istanbul-reporter
     coverageIstanbulReporter: {
       dir: path.join(__dirname, 'coverage'),
@@ -45,4 +58,4 @@ module.exports = config => {
     singleRun: false
 
   })
-};
+}
