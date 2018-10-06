@@ -85,14 +85,16 @@ import * as mm from 'music-metadata-browser';
 
 ### Module Functions:
 
-There are currently two ways to parse (read) audio tracks:
+There are currently three ways to parse (read) audio tracks:
 1) parsing a Web API blob or file with the  [parseBlob function](#parseBlob).
 2) Using [Node.js streams](https://nodejs.org/api/stream.html) using the [parseStream function](#parseStream).
+3) Provide a URL to [fetch the audio track from](#fetchUrl).
 
 #### parseBlob function
 
 To convert a [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) or [File](https://developer.mozilla.org/en-US/docs/Web/API/File) into a [stream](https://nodejs.org/api/stream.html#stream_readable_streams), 
 [filereader-stream](https://www.npmjs.com/package/filereader-stream) is used.
+
 ```javascript
 import * as mm from 'music-metadata-browser';
 
@@ -137,29 +139,17 @@ mm.parseStream(someReadStream, 'audio/mpeg', { fileSize: 26838 })
    });
 ```
 
-If you wish to stream your audio track over HTTP you need HTTP-client which provides a stream like  [stream-http](https://www.npmjs.com/package/stream-stream):
+### fetchUrl
+
+If you wish to stream your audio track over HTTP you need can use `fetchFromUrl` which is using the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) to retrieve the audio track:
 
 ```javascript
 import * as mm from 'music-metadata-browser';
-import http from "stream-http";
-
-/**
-* @param url Ensure the source the URL is pointing to, meets the CORS requirements
-*/
-function httpToStream(url) {
-  return new Promise(resolve => {
-    http.get(url, stream => {
-      resolve(stream);
-    });
-  });
-}
 
 /**
 * Stream over HTTP from URL
 */
-httpToStream(url).then(stream => {
-  mm.parseStream(stream, stream.headers["content-type"]);
-});
+return mm.fetchFromUrl(audioTrackUrl, options)
 ```
 
 #### orderTags function

@@ -1,9 +1,11 @@
-'use strict';
-
-import {Buffer} from 'buffer';
+import { Buffer } from 'buffer';
+import * as initDebug from 'debug';
 import * as mm from 'music-metadata/lib/core';
 import * as Type from 'music-metadata/lib/type';
 import * as toBuffer from 'typedarray-to-buffer';
+import { Browser2NodeStream } from './fetch/Browser2NodeStream';
+
+const debug = initDebug('music-metadata-browser');
 
 export type IAudioMetadata = Type.IAudioMetadata;
 export type IOptions = Type.IOptions;
@@ -40,6 +42,49 @@ export function parseBlob(blob: Blob, options?: IOptions): Promise<IAudioMetadat
     return mm.parseBuffer(buf, blob.type, options);
   });
 }
+
+/**
+ * Parse fetched file, using the Web Fetch API
+ * @param {string} audioTrackUrl URL to download the audio track from
+ * @param {IOptions} options Parsing options
+ * @returns {Promise<IAudioMetadata>}
+ */
+export function fetchFromUrl(audioTrackUrl: string, options?: IOptions): Promise<IAudioMetadata> {
+  return fetch(audioTrackUrl).then(response => {
+    const contentType = response.headers.get('Content-Type');
+    const headers = [];
+    response.headers.forEach(header => {
+      headers.push(header);
+    });
+    if (response.ok) {
+      if (response.body) {
+        const stream = new Browser2NodeStream(response.body);
+        return this.parseStream(stream, contentType, options).then(res => {
+          debug(`Closing stream 1bytesRead=${stream.bytesRead} / fileSize=${ options && options.fileSize ? options.fileSize : '?'}`);
+          stream.destroy();
+          return res;
+        });
+      } else {
+        // Fall back on Blob
+        return response.blob().then(blob => {
+          return this.parseBlob(blob, options);
+        });
+      }
+    } else {
+      throw new Error(`HTTP error status=${response.status}: ${response.statusText}`);
+    }
+
+  });
+}
+
+/**
+ * Parse audio from ITokenizer source
+ * @param {strtok3.ITokenizer} Audio source implementing the tokenizer interface
+ * @param {string} mimeType <string> Content specification MIME-type, e.g.: 'audio/mpeg'
+ * @param {IOptions} options Parsing options
+ * @returns {Promise<IAudioMetadata>}
+ */
+export const parseFromTokenizer = mm.parseFromTokenizer;
 
 /**
  * Convert Web API File to Node Buffer

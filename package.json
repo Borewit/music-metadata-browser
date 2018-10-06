@@ -52,6 +52,7 @@
     "build": "npm run compile-dist",
     "lint": "tslint 'src/**/*.ts' --exclude 'src/**/*.d.ts' 'test/**/*.ts' --exclude 'test/**/*.d.ts'",
     "karma": "karma start",
+    "karma-firefox": "karma start --browsers Firefox",
     "karma-once": "karma start --browsers Chrome --single-run",
     "travis-karma": "karma start --browsers Firefox --single-run --reporters coverage-istanbul,spec",
     "post-coveralls": "coveralls < coverage/lcov.info"
@@ -81,7 +82,9 @@
   "dependencies": {
     "assert": "^1.4.1",
     "buffer": "^5.2.1",
+    "debug": "^4.0.1",
     "music-metadata": "^3.1.1",
+    "remove": "^0.1.5",
     "typedarray-to-buffer": "^3.1.5"
   }
 }
