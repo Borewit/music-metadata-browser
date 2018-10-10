@@ -58,8 +58,6 @@ Support for [MusicBrainz](https://musicbrainz.org/) tags as written by [Picard](
 Not required, but would be extremely motivating.
 [PayPal.me](https://paypal.me/borewit)
 
-## Usage
-
 ### Installation
 Install via [npm](http://npmjs.org/):
 
@@ -207,6 +205,12 @@ If the returned promise resolves, the metadata (TypeScript `IAudioMetadata` inte
 #### Common
 
 [Common tag documentation](doc/common_metadata.md) is automatically generated.
+
+#### Automated testing
+
+Automated unit tests are planned to be tested with different browsers. This service has been made available by: 
+
+[<img src="https://svgshare.com/i/8i6.svg" width="250" alt="Windows Media logo">](http://browserstack.com/)
 
 ## Licence
 
