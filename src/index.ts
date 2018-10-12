@@ -15,11 +15,26 @@ export type INativeTagDict = Type.INativeTagDict;
 /**
  * Parse audio Stream
  * @param stream
- * @param mimeType
- * @param options Parsing options
+ * @param {string} contentType MIME-Type
+ * @param {IOptions} options Parsing options
  * @returns {Promise<IAudioMetadata>}
  */
-export const parseStream = mm.parseStream;
+export const parseNodeStream = mm.parseStream;
+
+/**
+ * Parse Web API ReadableStream: https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream
+ * @param {ReadableStream} stream ReadableStream
+ * @param {string} contentType MIME-Type
+ * @param {IOptions} options Parsing options
+ * @returns {Promise<IAudioMetadata>}
+ */
+export function parseReadableStream(stream: ReadableStream, contentType, options?: IOptions): Promise<IAudioMetadata> {
+  const ns = new Browser2NodeStream(stream);
+  return parseNodeStream(ns, contentType, options).then(res => {
+    debug(`Completed parsing from stream 1bytesRead=${ns.bytesRead} / fileSize=${ options && options.fileSize ? options.fileSize : '?'}`);
+    return res;
+  });
+}
 
 /**
  * Parse audio from Node Buffer
@@ -58,10 +73,8 @@ export function fetchFromUrl(audioTrackUrl: string, options?: IOptions): Promise
     });
     if (response.ok) {
       if (response.body) {
-        const stream = new Browser2NodeStream(response.body);
-        return this.parseStream(stream, contentType, options).then(res => {
-          debug(`Closing stream 1bytesRead=${stream.bytesRead} / fileSize=${ options && options.fileSize ? options.fileSize : '?'}`);
-          stream.destroy();
+        return this.parseReadableStream(response.body, contentType, options).then(res => {
+          response.body.cancel();
           return res;
         });
       } else {

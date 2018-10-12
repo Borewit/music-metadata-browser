@@ -84,9 +84,10 @@ import * as mm from 'music-metadata-browser';
 ### Module Functions:
 
 There are currently three ways to parse (read) audio tracks:
-1) parsing a Web API blob or file with the  [parseBlob function](#parseBlob).
-2) Using [Node.js streams](https://nodejs.org/api/stream.html) using the [parseStream function](#parseStream).
-3) Provide a URL to [fetch the audio track from](#fetchUrl).
+1) parsing a Web API blob or file with the  [parseBlob function](#parseblob-function).
+2) Using [ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream) using the [parseReadableStream function](#parsereadablestream-function).
+3) Using [Node.js streams](https://nodejs.org/api/stream.html) using the [parseNodeStream function](#parsenodestream-function).
+3) Provide a URL to [fetch the audio track from](#fetchurl-function).
 
 #### parseBlob function
 
@@ -107,19 +108,19 @@ function readFromBlob(blob) {
   });
 }
 ```
- 
-#### parseStream function
+
+#### parseReadableStream function
 
 ```javascript
 import * as mm from 'music-metadata-browser';
 
-mm.parseStream(readableStream)
+mm.parseReadableStream(readableStream)
   .then( metadata => {
      console.log(util.inspect(metadata, { showHidden: false, depth: null }));
      readableStream.close();
    });
 ```
-The readable stream is derived from [Node's readable stream](https://nodejs.org/api/stream.html#stream_readable_streams).
+Parse from a Web API [ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream).
 
 If available, pass the mime-type and file-size. Without the mime-type, the content will be audio type will be automatically detected.
 
@@ -130,14 +131,41 @@ If the MIME-type or filename is not provided, or not understood, music-metadata 
 ```javascript
 import * as mm from 'music-metadata-browser';
 
-mm.parseStream(someReadStream, 'audio/mpeg', { fileSize: 26838 })
+const readableStream = result.node;
+
+mm.parseReadableStream(readableStream, 'audio/mpeg', { fileSize: 26838 })
+  .then( metadata => {
+     console.log(util.inspect(metadata, { showHidden: false, depth: null }));
+     someReadStream.cancel();
+   });
+```
+ 
+#### parseNodeStream function
+
+```javascript
+import * as mm from 'music-metadata-browser';
+
+mm.parseNodeStream(readableStream)
+  .then( metadata => {
+     console.log(util.inspect(metadata, { showHidden: false, depth: null }));
+     readableStream.destroy();
+   });
+```
+The readable stream is derived from [Node's readable stream](https://nodejs.org/api/stream.html#stream_readable_streams).
+
+If available, pass the mime-type and file-size. Without the mime-type, the content will be audio type will be automatically detected.
+
+```javascript
+import * as mm from 'music-metadata-browser';
+
+mm.parseNodeStream(someReadStream, 'audio/mpeg', { fileSize: 26838 })
   .then( metadata => {
      console.log(util.inspect(metadata, { showHidden: false, depth: null }));
      someReadStream.close();
    });
 ```
 
-### fetchUrl
+### fetchUrl function
 
 If you wish to stream your audio track over HTTP you need can use `fetchFromUrl` which is using the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) to retrieve the audio track:
 
@@ -168,7 +196,7 @@ ratingToStars(rating: number): number
 
 ### Options:
   * `duration`: default: `false`, if set to `true`, it will parse the whole media file if required to determine the duration.
-  * `fileSize`: only provide this in combination with `parseStream` function.
+  * `fileSize`: provide this if parsing from a stream.
   * `loadParser: (moduleName: string) => Promise<ITokenParser>;`: default: lazy load using require, allows custom async lazy loading of parser modules. The resolved `ITokenParser` will not be cached.
   * `native`: default: `false`, if set to `true`, it will return native tags in addition to the `common` tags.
   * `observer: (update: MetadataEvent) => void;`: Will be called after each change to `common` (generic) tag, or `format` properties.

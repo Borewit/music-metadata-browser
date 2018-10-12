@@ -41,7 +41,7 @@ const parsers: IParserTest[] = [
     methodDescription: 'parseStream()',
     parseUrl: (audioTrackUrl, options) => {
       return httpGetByUrl(audioTrackUrl).then(stream => {
-        return mm.parseStream(stream, (stream as any).type, options);
+        return mm.parseNodeStream(stream, (stream as any).type, options);
       });
     }
   },
