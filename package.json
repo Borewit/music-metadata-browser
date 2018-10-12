@@ -83,7 +83,7 @@
     "assert": "^1.4.1",
     "buffer": "^5.2.1",
     "debug": "^4.0.1",
-    "music-metadata": "^3.1.1",
+    "music-metadata": "^3.1.4",
     "remove": "^0.1.5",
     "typedarray-to-buffer": "^3.1.5"
   }

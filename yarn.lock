@@ -2746,7 +2746,7 @@ ms@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
-music-metadata@^3.1.1:
+music-metadata@^3.1.4:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-3.1.4.tgz#ca652c462ebd5f470d15045888f35e3580d0545b"
   dependencies:
