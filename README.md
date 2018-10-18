@@ -13,7 +13,7 @@
 
 ## Features
 
-* Supports metadata of the following audio and tag types:
+  * Supports metadata of the following audio and tag types:
 
 ### Support for audio file types:
 
@@ -35,7 +35,7 @@
 | WavPack       |                                 | [:link:](https://wikipedia.org/wiki/WavPack)                       | <img src="http://www.wavpack.com/wavpacklogo.svg" width="60" alt="WavPack logo">                                                              |
 | WMA           | Windows Media Audio             | [:link:](https://wikipedia.org/wiki/Windows_Media_Audio)           | <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Windows_Media_Player_simplified_logo.svg" width="40" alt="Windows Media logo">  |
 
-### Support for tags:
+### Support for tags
 
 * [APE](https://en.wikipedia.org/wiki/APE_tag)
 * [ASF](https://en.wikipedia.org/wiki/Advanced_Systems_Format)
@@ -45,17 +45,18 @@
 
 Support for [MusicBrainz](https://musicbrainz.org/) tags as written by [Picard](https://picard.musicbrainz.org/).
 
-### Audio format & encoding details:
+### Audio format & encoding details
 
-* Support for encoding / format details:
-  * [Bit rate](https://wikipedia.org/wiki/Bit_rate)
-  * [Audio bit depth](https://wikipedia.org/wiki/Audio_bit_depth)
-  * Duration
-  * encoding profile (e.g. [CBR](https://en.wikipedia.org/wiki/Constant_bitrate), V0, V2)
+Support for encoding / format details:
+* [Bit rate](https://wikipedia.org/wiki/Bit_rate)
+* [Audio bit depth](https://wikipedia.org/wiki/Audio_bit_depth)
+* Duration
+* encoding profile (e.g. [CBR](https://en.wikipedia.org/wiki/Constant_bitrate), V0, V2)
   
-### Online demo's
-* [Audio Tag Analyzer](https://audio-tag-analyzer.netlify.com/)
-* [Webamp powered with music-metadata](https://music-metadata-webamp.netlify.com/)
+## Online demo's
+  * [<img src="https://gitcdn.xyz/repo/Borewit/audio-tag-analyzer/master/src/assets/icon/audio-tag-analyzer.svg" width="40">Audio Tag Analyzer](https://audio-tag-analyzer.netlify.com/)
+  * [<img src="https://svgshare.com/i/8uW.svg" width="40"> Webamp](https://webamp.org/)
+
 
 ### Donation
 Not required, but would be extremely motivating.
@@ -84,7 +85,7 @@ This is how it's done in TypeScript:
 import * as mm from 'music-metadata-browser';
 ```
 
-### Module Functions:
+### Module Functions
 
 There are currently three ways to parse (read) audio tracks:
 1) parsing a Web API blob or file with the  [parseBlob function](#parseblob-function).
