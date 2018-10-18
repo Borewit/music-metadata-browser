@@ -5,7 +5,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/Borewit/music-metadata/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Borewit/music-metadata-browser?targetFile=package.json)
 [![Coverage Status](https://coveralls.io/repos/github/Borewit/music-metadata-browser/badge.svg?branch=master)](https://coveralls.io/github/Borewit/music-metadata-browser?branch=master)
 ![NPM version](https://img.shields.io/bundlephobia/min/music-metadata-browser.svg)
-[![Discord](https://img.shields.io/discord/460524735235883049.svg)](https://discord.gg/KyBr6sb)
+[![Discord](https://img.shields.io/discord/460524735235883049.svg)](https://discord.gg/M8EWZk7)
 
 # music-metadata-browser
 
