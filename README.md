@@ -16,9 +16,7 @@
 
   * Supports metadata of the following audio and tag types:
 
-### Support for audio file types:
-
-### Support for audio file types:
+### Support for audio file types
 
 | Audio format  | Description                     | Wiki                                                               |                                                                                                                                               |
 | ------------- |---------------------------------| -------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -74,7 +72,7 @@ or yarn
 yarn add music-metadata
 ```
 
-### Import music-metadata:
+### Import music-metadata
 
 This is how you can import music-metadata in JavaScript, in you code:
 ```JavaScript
@@ -199,14 +197,16 @@ Can be used to convert the normalized rating value to the 0..5 stars, where 0 an
 ratingToStars(rating: number): number
 ```
 
-### Options:
-  * `duration`: default: `false`, if set to `true`, it will parse the whole media file if required to determine the duration.
-  * `fileSize`: provide this if parsing from a stream.
-  * `loadParser: (moduleName: string) => Promise<ITokenParser>;`: default: lazy load using require, allows custom async lazy loading of parser modules. The resolved `ITokenParser` will not be cached.
-  * `native`: default: `false`, if set to `true`, it will return native tags in addition to the `common` tags.
-  * `observer: (update: MetadataEvent) => void;`: Will be called after each change to `common` (generic) tag, or `format` properties.
-  * `skipCovers`: default: `false`, if set to `true`, it will not return embedded cover-art (images).
-  * `skipPostHeaders? boolean` default: `false`, if set to `true`, it will not search all the entire track for additional headers. Only recommenced to use in combination with streams.
+### Options
+
+The following (optional) configurations can be passed:
+* `duration`: default: `false`, if set to `true`, it will parse the whole media file if required to determine the duration.
+* `fileSize`: provide this if parsing from a stream.
+* `loadParser: (moduleName: string) => Promise<ITokenParser>;`: default: lazy load using require, allows custom async lazy loading of parser modules. The resolved `ITokenParser` will not be cached.
+* `native`: default: `false`, if set to `true`, it will return native tags in addition to the `common` tags.
+* `observer: (update: MetadataEvent) => void;`: Will be called after each change to `common` (generic) tag, or `format` properties.
+* `skipCovers`: default: `false`, if set to `true`, it will not return embedded cover-art (images).
+* `skipPostHeaders? boolean` default: `false`, if set to `true`, it will not search all the entire track for additional headers. Only recommenced to use in combination with streams.
 
 Although in most cases duration is included, in some cases it requires `music-metadata` parsing the entire file.
 To enforce parsing the entire file if needed you should set `duration` to `true`.
@@ -215,25 +215,24 @@ To enforce parsing the entire file if needed you should set `duration` to `true`
 
 If the returned promise resolves, the metadata (TypeScript `IAudioMetadata` interface) contains:
 
-  * [`format: IFormat`](#format) Audio format information
-  * `native: INativeTags` List of native (original) tags found in the parsed audio file. If the native option is set to false, this property is not defined.
-  * [`common: ICommonTagsResult`](doc/common_metadata.md) Is a generic (abstract) way of reading metadata information. 
+* [`format: IFormat`](#format) Audio format information
+* `native: INativeTags` List of native (original) tags found in the parsed audio file. If the native option is set to false, this property is not defined.
+* [`common: ICommonTagsResult`](doc/common_metadata.md) Is a generic (abstract) way of reading metadata information. 
   
 #### Format
   
-  Audio format information. Defined in the TypeScript `IFormat` interface:
-  
-  * `dataformat?: string` Audio encoding format. e.g.: 'flac'
-  * `tagTypes?: TagType[]`  List of tagging formats found in parsed audio file
-  * `duration?: number` Duration in seconds
-  * `bitrate?: number` Number bits per second of encoded audio file
-  * `sampleRate?: number` Sampling rate in Samples per second (S/s)
-  * `bitsPerSample?: number` Audio bit depth
-  * `encoder?` Encoder name
-  * `codecProfile?: string` Codec profile
-  * `lossless?: boolean` True if lossless,  false for lossy encoding
-  * `numberOfChannels?: number` Number of audio channels
-  * `numberOfSamples?: number` Number of samples frames, one sample contains all channels. The duration is: numberOfSamples / sampleRate
+Audio format information. Defined in the TypeScript `IFormat` interface:
+* `dataformat?: string` Audio encoding format. e.g.: 'flac'
+* `tagTypes?: TagType[]`  List of tagging formats found in parsed audio file
+* `duration?: number` Duration in seconds
+* `bitrate?: number` Number bits per second of encoded audio file
+* `sampleRate?: number` Sampling rate in Samples per second (S/s)
+* `bitsPerSample?: number` Audio bit depth
+* `encoder?` Encoder name
+* `codecProfile?: string` Codec profile
+* `lossless?: boolean` True if lossless,  false for lossy encoding
+* `numberOfChannels?: number` Number of audio channels
+* `numberOfSamples?: number` Number of samples frames, one sample contains all channels. The duration is: numberOfSamples / sampleRate
   
 #### Common
 
