@@ -3,7 +3,7 @@ import * as Stream from 'stream';
 import * as http from 'stream-http';
 import * as mm from './index';
 
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000;
 
 function httpGetByUrl(url: string): Promise<Stream.Readable> {
   // Assume URL
