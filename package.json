@@ -55,7 +55,7 @@
     "karma-firefox": "karma start --browsers Firefox",
     "karma-once": "karma start --browsers Chrome --single-run",
     "travis-karma": "karma start --browsers Firefox --single-run --reporters coverage-istanbul,spec",
-    "travis-karma-browserstack": "karma start --browsers bs_win_chrome_69,bs_win_firefox_62 --single-run --reporters coverage-istanbul,spec",
+    "travis-karma-browserstack": "karma start --browsers bs_win_chrome_69,bs_win_firefox_62 --single-run --reporters coverage-istanbul,spec,BrowserStack",
     "post-coveralls": "coveralls < coverage/lcov.info"
   },
   "devDependencies": {
