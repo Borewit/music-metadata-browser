@@ -56,7 +56,8 @@ module.exports = config => {
           // outputs the report in ./coverage/html
           subdir: 'html'
         }
-      }
+      },
+      combineBrowserReports: true // Combines coverage information from multiple browsers into one report
     },
 
     // global BrowserStack configuration
