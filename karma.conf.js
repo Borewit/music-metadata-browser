@@ -58,9 +58,33 @@ module.exports = config => {
         }
       }
     },
+
+    // global BrowserStack configuration
+    browserStack: {
+      forcelocal: true  // force traffic through the local BrowserStack tunnel, passes flag through to BrowserStackTunnel
+    },
+
+    // define browsers
+    customLaunchers: {
+      bs_win_chrome_69: {
+        base: 'BrowserStack',
+        browser: 'Chrome',
+        browser_version: '69.0',
+        os: 'Windows',
+        os_version: '10'
+      },
+      bs_win_firefox_62: {
+        base: 'BrowserStack',
+        browser: 'Firefox',
+        browser_version: '62.0',
+        os: 'Windows',
+        os_version: '10'
+      }
+    },
+
     //autoWatch: true,
     browsers: ['Chrome'],
     colors: true,
-    singleRun: false
+    singleRun: false,
   })
 }
