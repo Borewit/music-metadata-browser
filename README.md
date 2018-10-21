@@ -3,9 +3,10 @@
 [![npm downloads](http://img.shields.io/npm/dm/music-metadata-browser.svg)](https://npmjs.org/package/music-metadata-browser)
 [![dependencies Status](https://david-dm.org/Borewit/music-metadata-browser/status.svg)](https://david-dm.org/Borewit/music-metadata-browser)
 [![Known Vulnerabilities](https://snyk.io/test/github/Borewit/music-metadata/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Borewit/music-metadata-browser?targetFile=package.json)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/77818ccb061e445e907cacbafc6ac8c2)](https://www.codacy.com/app/Borewit/music-metadata-browser?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Borewit/music-metadata-browser&amp;utm_campaign=Badge_Grade)
 [![Coverage Status](https://coveralls.io/repos/github/Borewit/music-metadata-browser/badge.svg?branch=master)](https://coveralls.io/github/Borewit/music-metadata-browser?branch=master)
-![NPM version](https://img.shields.io/bundlephobia/min/music-metadata-browser.svg)
-[![Discord](https://img.shields.io/discord/460524735235883049.svg)](https://discord.gg/M8EWZk7)
+![Minified size](https://img.shields.io/bundlephobia/min/music-metadata-browser.svg)
+[![Chat](https://img.shields.io/discord/460524735235883049.svg)](https://discord.gg/M8EWZk7)
 
 # music-metadata-browser
 
