@@ -59,7 +59,8 @@
     "travis-karma": "karma start --browsers Firefox --single-run --reporters coverage-istanbul,spec",
     "browserstack": "karma start --browsers bs_win_chrome_69,bs_win_firefox_62,bs_osx_safari_12,bs_win_edge_17 --single-run --reporters coverage-istanbul,spec",
     "travis-karma-browserstack": "karma start --browsers bs_win_chrome_69,bs_win_firefox_62,bs_osx_safari_12,bs_win_edge_17 --single-run --reporters coverage-istanbul,spec,BrowserStack",
-    "post-coveralls": "coveralls < coverage/lcov.info"
+    "post-coveralls": "coveralls < coverage/lcov.info",
+    "post-codacy": " codacy-coverage < coverage/lcov.info"
   },
   "devDependencies": {
     "@types/jasmine": "^2.8.8",
