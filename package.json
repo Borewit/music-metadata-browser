@@ -90,7 +90,7 @@
     "assert": "^1.4.1",
     "buffer": "^5.2.1",
     "debug": "^4.0.1",
-    "music-metadata": "^3.4.0",
+    "music-metadata": "^3.5.0",
     "readable-stream": "^3.0.6",
     "remove": "^0.1.5",
     "typedarray-to-buffer": "^3.1.5"
