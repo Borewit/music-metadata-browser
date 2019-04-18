@@ -74,7 +74,7 @@ export function fetchFromUrl(audioTrackUrl: string, options?: IOptions): Promise
     if (response.ok) {
       if (response.body) {
         return this.parseReadableStream(response.body, contentType, options).then(res => {
-          response.body.cancel();
+          if (!response.body.locked) response.body.cancel();
           return res;
         });
       } else {
