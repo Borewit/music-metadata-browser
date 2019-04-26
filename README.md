@@ -66,11 +66,11 @@ Not required, but would be extremely motivating.
 Install via [npm](http://npmjs.org/):
 
 ```bash
-npm install music-metadata
+npm install music-metadata-browser
 ```
 or yarn
 ```bash
-yarn add music-metadata
+yarn add music-metadata-browser
 ```
 
 ### Import music-metadata
