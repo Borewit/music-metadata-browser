@@ -3071,9 +3071,9 @@ ms@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
-music-metadata@^3.5.2:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-3.5.2.tgz#73a745504ba05565d04522d77172876e0db17c01"
+music-metadata@^3.6.1:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-3.6.1.tgz#f66b81a96c2055493683fa61b462bc6576408fc3"
   dependencies:
     debug "^4.1.0"
     file-type "^10.5.0"
@@ -3680,6 +3680,14 @@ read-pkg@^1.0.0:
 readable-stream@^3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.0.6.tgz#351302e4c68b5abd6a2ed55376a7f9a25be3057a"
+  dependencies:
+    inherits "^2.0.3"
+    string_decoder "^1.1.1"
+    util-deprecate "^1.0.1"
+
+readable-stream@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.3.0.tgz#cb8011aad002eb717bf040291feba8569c986fb9"
   dependencies:
     inherits "^2.0.3"
     string_decoder "^1.1.1"
