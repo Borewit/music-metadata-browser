@@ -38,7 +38,15 @@
     "aiff",
     "wav",
     "WavPack",
-    "Opus"
+    "Opus",
+    "speex",
+    "musepack",
+    "mpc",
+    "dsd",
+    "dsf",
+    "mpc",
+    "dff",
+    "dsdiff"
   ],
   "license": "MIT",
   "bugs": {
