@@ -1,3 +1,7 @@
+import * as initDebug from 'debug';
+
+const debug = initDebug('music-metadata-browser:stream');
+
 /**
  * A mock readable-stream, using string to read from
  */
@@ -11,7 +15,11 @@ export class Browser2NodeStream extends Readable {
 
   public bytesRead: number = 0;
 
+  /**
+   * Browser stream
+   */
   private reader: ReadableStreamReader;
+  private pendingRead: Promise<ReadableStreamReadResult<any>>;
 
   constructor(stream: ReadableStream) {
     super();
@@ -19,7 +27,9 @@ export class Browser2NodeStream extends Readable {
   }
 
   public _read() {
-    this.reader.read().then(res => {
+    this.pendingRead = this.reader.read();
+    this.pendingRead.then(res => {
+      delete this.pendingRead;
       if (res.done) {
         this.push(null);
       } else {
@@ -30,10 +40,22 @@ export class Browser2NodeStream extends Readable {
   }
 
   public _destroy(error: Error | null, callback: (error: Error | null) => void): void {
-    this.reader.cancel().then(() => {
+    this.release().then(() => {
+      debug(`release browser stream.`);
       callback(null);
     }).catch(err => {
       callback(err);
     });
+  }
+
+  /**
+   * Wait for read to complete and release ReadableStreamReader
+   */
+  public async release(): Promise<void> {
+    debug(`Release stream...`);
+    if (this.pendingRead) {
+      await this.pendingRead;
+      this.reader.releaseLock();
+    }
   }
 }

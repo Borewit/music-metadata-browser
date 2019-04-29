@@ -28,12 +28,12 @@ export const parseNodeStream = mm.parseStream;
  * @param {IOptions} options Parsing options
  * @returns {Promise<IAudioMetadata>}
  */
-export function parseReadableStream(stream: ReadableStream, contentType, options?: IOptions): Promise<IAudioMetadata> {
+export async function parseReadableStream(stream: ReadableStream, contentType, options?: IOptions): Promise<IAudioMetadata> {
   const ns = new Browser2NodeStream(stream);
-  return parseNodeStream(ns, contentType, options).then(res => {
-    debug(`Completed parsing from stream 1bytesRead=${ns.bytesRead} / fileSize=${ options && options.fileSize ? options.fileSize : '?'}`);
-    return res;
-  });
+  const res = await parseNodeStream(ns, contentType, options);
+  debug(`Completed parsing from stream bytesRead=${ns.bytesRead} / fileSize=${options && options.fileSize ? options.fileSize : '?'}`);
+  await ns.release();
+  return res;
 }
 
 /**
@@ -64,30 +64,25 @@ export function parseBlob(blob: Blob, options?: IOptions): Promise<IAudioMetadat
  * @param {IOptions} options Parsing options
  * @returns {Promise<IAudioMetadata>}
  */
-export function fetchFromUrl(audioTrackUrl: string, options?: IOptions): Promise<IAudioMetadata> {
-  return fetch(audioTrackUrl).then(response => {
-    const contentType = response.headers.get('Content-Type');
-    const headers = [];
-    response.headers.forEach(header => {
-      headers.push(header);
-    });
-    if (response.ok) {
-      if (response.body) {
-        return this.parseReadableStream(response.body, contentType, options).then(res => {
-          response.body.cancel();
-          return res;
-        });
-      } else {
-        // Fall back on Blob
-        return response.blob().then(blob => {
-          return this.parseBlob(blob, options);
-        });
-      }
-    } else {
-      throw new Error(`HTTP error status=${response.status}: ${response.statusText}`);
-    }
-
+export async function fetchFromUrl(audioTrackUrl: string, options?: IOptions): Promise<IAudioMetadata> {
+  const response = await fetch(audioTrackUrl);
+  const contentType = response.headers.get('Content-Type');
+  const headers = [];
+  response.headers.forEach(header => {
+    headers.push(header);
   });
+  if (response.ok) {
+    if (response.body) {
+      const res = await this.parseReadableStream(response.body, contentType, options);
+      await response.body.cancel();
+      return res;
+    } else {
+      // Fall back on Blob
+      return this.parseBlob(await response.blob(), options);
+    }
+  } else {
+    throw new Error(`HTTP error status=${response.status}: ${response.statusText}`);
+  }
 }
 
 /**
