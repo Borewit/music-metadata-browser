@@ -74,7 +74,7 @@ export async function fetchFromUrl(audioTrackUrl: string, options?: IOptions): P
   if (response.ok) {
     if (response.body) {
       const res = await this.parseReadableStream(response.body, contentType, options);
-      await response.body.cancel();
+      if (!response.body.locked) await response.body.cancel();
       return res;
     } else {
       // Fall back on Blob
