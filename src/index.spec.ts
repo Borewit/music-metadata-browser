@@ -1,4 +1,4 @@
-// localStorage.debug = 'music-metadata-browser';
+localStorage.debug = 'music-metadata-browser:*';
 import * as Stream from 'stream';
 import * as http from 'stream-http';
 import * as mm from './index';
