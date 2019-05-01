@@ -53,12 +53,12 @@
     "url": "https://github.com/Borewit/music-metadata-browser/issues"
   },
   "scripts": {
-    "clean": "del-cli dist/** src/**/*.js src/**/*.js.map src/**/*.d.ts test/**/*.js test/**/*.js.map coverage",
+    "clean": "del-cli dist/** src/**/*.js src/**/*.js.map src/**/*.d.ts coverage",
     "compile-dist": "tsc -p src/tsconfig.dist.json",
     "compile-test": "tsc -p src/tsconfig.spec.json",
     "prepublishOnly": "yarn run build",
     "build": "npm run compile-dist",
-    "tslint": "tslint 'src/**/*.ts' --exclude 'src/**/*.d.ts' 'test/**/*.ts' --exclude 'test/**/*.d.ts'",
+    "tslint": "tslint 'src/**/*.ts' --exclude 'src/**/*.d.ts'",
     "eslint": "eslint karma.conf.js",
     "lint": "npm run tslint && npm run eslint",
     "karma": "karma start",
