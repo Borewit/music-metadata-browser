@@ -5,7 +5,7 @@ import * as Type from 'music-metadata/lib/type';
 import * as toBuffer from 'typedarray-to-buffer';
 import { Browser2NodeStream } from './fetch/Browser2NodeStream';
 
-const debug = initDebug('music-metadata-browser');
+const debug = initDebug('music-metadata-browser:main');
 
 export type IAudioMetadata = Type.IAudioMetadata;
 export type IOptions = Type.IOptions;
@@ -32,7 +32,7 @@ export async function parseReadableStream(stream: ReadableStream, contentType, o
   const ns = new Browser2NodeStream(stream);
   const res = await parseNodeStream(ns, contentType, options);
   debug(`Completed parsing from stream bytesRead=${ns.bytesRead} / fileSize=${options && options.fileSize ? options.fileSize : '?'}`);
-  await ns.release();
+  await ns.close();
   return res;
 }
 
@@ -74,7 +74,9 @@ export async function fetchFromUrl(audioTrackUrl: string, options?: IOptions): P
   if (response.ok) {
     if (response.body) {
       const res = await this.parseReadableStream(response.body, contentType, options);
-      if (!response.body.locked) await response.body.cancel();
+      debug('Closing HTTP-readable-stream...');
+      await response.body.cancel();
+      debug('HTTP-readable-stream closed.');
       return res;
     } else {
       // Fall back on Blob
