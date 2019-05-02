@@ -62,7 +62,8 @@ module.exports = config => {
 
     // global BrowserStack configuration
     browserStack: {
-      forcelocal: true  // force traffic through the local BrowserStack tunnel, passes flag through to BrowserStackTunnel
+      forcelocal: true,  // force traffic through the local BrowserStack tunnel, passes flag through to BrowserStackTunnel
+      project: 'music-metadata-browser'
     },
 
     // define browsers
