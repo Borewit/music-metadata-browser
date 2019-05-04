@@ -75,9 +75,9 @@ yarn add music-metadata-browser
 
 ### Import music-metadata
 
-This is how you can import music-metadata in JavaScript, in you code:
+Import music-metadata in JavaScript:
 ```JavaScript
-var mm = require('music-metadata-browser');
+const mm = require('music-metadata-browser');
 ```
 
 This is how it's done in TypeScript:
