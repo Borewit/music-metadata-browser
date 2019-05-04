@@ -68,33 +68,40 @@ module.exports = config => {
 
     // define browsers
     customLaunchers: {
-      bs_win_chrome_69: {
+      bs_win_chrome: {
         base: 'BrowserStack',
         os: 'Windows',
         os_version: '10',
         browser: 'Chrome',
-        browser_version: '69.0'
+        browser_version: '74.0'
       },
-      bs_win_firefox_62: {
+      bs_win_firefox: {
         base: 'BrowserStack',
         os: 'Windows',
         os_version: '10',
         browser: 'Firefox',
-        browser_version: '62.0'
+        browser_version: '66.0'
       },
-      bs_osx_safari_12: {
+      bs_osx_safari: {
         base: 'BrowserStack',
         os: 'OS X',
         os_version: 'Mojave',
         browser: 'Safari',
         browser_version: '12.0'
       },
-      bs_win_edge_17: {
+      bs_win_edge: {
         base: 'BrowserStack',
         os: 'Windows',
         os_version: '10',
         browser: 'Edge',
-        browser_version: '17'
+        browser_version: '18'
+      },
+      bs_win_opera: {
+        base: 'BrowserStack',
+        os: 'Windows',
+        os_version: '10',
+        browser: 'Opera',
+        browser_version: '60'
       }
     },
 

@@ -66,7 +66,7 @@
     "karma-once": "karma start --browsers Chrome --single-run",
     "travis-karma": "karma start --browsers Firefox --single-run --reporters coverage-istanbul,spec",
     "browserstack": "karma start --browsers bs_win_chrome_69,bs_win_firefox_62,bs_osx_safari_12,bs_win_edge_17 --single-run --reporters coverage-istanbul,spec",
-    "travis-karma-browserstack": "karma start --browsers bs_win_chrome_69,bs_win_firefox_62,bs_osx_safari_12,bs_win_edge_17 --single-run --reporters coverage-istanbul,spec,BrowserStack",
+    "travis-karma-browserstack": "karma start --browsers bs_win_chrome,bs_win_firefox,bs_osx_safari,bs_win_edge,bs_win_opera --single-run --reporters coverage-istanbul,spec,BrowserStack",
     "post-coveralls": "coveralls < coverage/lcov.info",
     "post-codacy": " codacy-coverage < coverage/lcov.info"
   },
