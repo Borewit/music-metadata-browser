@@ -61,7 +61,7 @@
     "tslint": "tslint 'src/**/*.ts' --exclude 'src/**/*.d.ts'",
     "eslint": "eslint karma.conf.js",
     "lint": "npm run tslint && npm run eslint",
-    "test": "karma start",
+    "test": "karma start --single-run",
     "karma": "karma start",
     "karma-firefox": "karma start --browsers Firefox",
     "karma-once": "karma start --browsers Chrome --single-run",
