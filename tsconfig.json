@@ -12,8 +12,7 @@
       "node_modules/@types"
     ],
     "lib": [
-      "es2017",
-      "dom"
+     "dom"
     ],
     "baseUrl": ".",
     "paths": {
