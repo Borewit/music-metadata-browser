@@ -3747,7 +3747,7 @@ readable-stream@^3.0.6, readable-stream@^3.3.0:
     string_decoder "^1.1.1"
     util-deprecate "^1.0.1"
 
-readable-web-to-node-stream@^1.0.0:
+readable-web-to-node-stream@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/readable-web-to-node-stream/-/readable-web-to-node-stream-1.1.4.tgz#5857d32fb9f791d1c4ca3c297ff028acb41218c6"
 
