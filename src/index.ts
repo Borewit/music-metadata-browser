@@ -75,7 +75,9 @@ export async function fetchFromUrl(audioTrackUrl: string, options?: IOptions): P
     if (response.body) {
       const res = await this.parseReadableStream(response.body, contentType, options);
       debug('Closing HTTP-readable-stream...');
-      await response.body.cancel();
+      if (!response.body.locked) { // Prevent error in Firefox
+        await response.body.cancel();
+      }
       debug('HTTP-readable-stream closed.');
       return res;
     } else {
