@@ -7,5 +7,7 @@ coverage/
 tsconfig.json
 tslint.conf
 yarn-error.log
-karma.conf.json
+karma.conf.js
 lib/**/*.js.map
+local.log
+tslint.json
