@@ -3033,16 +3033,16 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
 
 music-metadata@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-4.4.0.tgz#9dd641c5b0f5cbbf9240c028ca788caccaf429e9"
-  integrity sha512-v3cP/wfPkvmgFDnQ0xX2xoK12XtWmc6o2ed4FTzQ/DYP+HJ7EohxP89aUqzUrjMQuUvIYDa3jq1e+uQYw3rtCg==
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-4.5.3.tgz#53863899200afecbe208fb3c8faa3f1f1b19a7ec"
+  integrity sha512-VXIr9hGJyxcdyqOlUmn+c4wM8f1FAyLyxV12L1pYC5Zb/MKElrh2JmGTLBSy23DN27uBA4QbqhfOOtkvd9H6Mw==
   dependencies:
     content-type "^1.0.4"
     debug "^4.1.0"
     file-type "^12.1.0"
     media-typer "^1.1.0"
-    strtok3 "^3.0.0"
-    token-types "^1.0.1"
+    strtok3 "^3.0.1"
+    token-types "^1.0.3"
 
 mute-stream@0.0.7:
   version "0.0.7"
@@ -4240,12 +4240,13 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-strtok3@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-3.0.0.tgz#2fe07702c27787fd4766a22cafe4ac9a4d9e0706"
+strtok3@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-3.0.1.tgz#67b67c318b44f9fbff97fd94033681ec502fdfa2"
+  integrity sha512-1aRPsZAxNJ8xo0UPpJgI7VRLZsjal0lvjkF4kIvHL6u3RxHM+hbenfJA0hVmwoUcjbvHuo/HqeB+tTUYx2FciA==
   dependencies:
     debug "^4.1.1"
-    then-read-stream "^2.0.0"
+    then-read-stream "^2.0.6"
     token-types "^1.0.1"
 
 supports-color@^2.0.0:
@@ -4323,9 +4324,10 @@ text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
 
-then-read-stream@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/then-read-stream/-/then-read-stream-2.0.0.tgz#94bb75f01cac12198ecfc277f914d3ce5a1eb787"
+then-read-stream@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/then-read-stream/-/then-read-stream-2.0.6.tgz#8d8e2b165b54a1c5f866cb43e2164c1f5f9b85ac"
+  integrity sha512-5HA8j7O3NL6P4Pi0IzZx8/t46sK0+h3n+P/P0Yzi11ODwR+ZWjG+KILzLXPvJM7PvYjK7sDKfcN1YVCNGbPNEQ==
 
 through2@^2.0.0:
   version "2.0.5"
@@ -4398,9 +4400,10 @@ toidentifier@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
 
-token-types@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/token-types/-/token-types-1.0.1.tgz#c91671bd80f7e2ded10dee4b8ff17247c40378c7"
+token-types@^1.0.1, token-types@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/token-types/-/token-types-1.0.3.tgz#737cc01939d23577ae339b88de82fa3cb3d0b735"
+  integrity sha512-8THi5oekS/TLE01xOMknevTgHwVEcWOsO3zlqxGvzAz+tjZGiACyjcZuH1LTJuHvqmb8SsX/BeqcfQA0JRwqzA==
 
 tough-cookie@~2.4.3:
   version "2.4.3"
