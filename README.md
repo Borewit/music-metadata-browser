@@ -73,16 +73,21 @@ or yarn
 yarn add music-metadata-browser
 ```
 
+### Requirements
+[music-metadata-browser](https://www.npmjs.com/package/music-metadata-browser) is a module designed for a module bundler like [webpack](https://webpack.js.org/).
+A *module bundler* turns modules in static assets (typically one minified JavaScript file). 
+Those *static assets* are then prepared, made compatible and optimized for execution by a web browser.
+
 ### Import music-metadata
 
 Import music-metadata in JavaScript
-```JavaScript
-const mm = require('music-metadata-browser');
+```js
+const musicMetadata = require('music-metadata-browser');
 ```
 
-This is how it's done in TypeScript
-```TypeScript
-import * as mm from 'music-metadata-browser';
+This is how it's done in [TypeScript](https://www.typescriptlang.org/docs/home.html)
+```ts
+import * as musicMetadata from 'music-metadata-browser';
 ```
 
 ### Module Functions
@@ -99,17 +104,28 @@ To convert a [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) or [F
 [filereader-stream](https://www.npmjs.com/package/filereader-stream) is used.
 
 ```javascript
-import * as mm from 'music-metadata-browser';
+const musicMetadata = request('music-metadata-browser');
 
 /**
 * @param blob Blob (e.g. Web API File)
 */
-function readFromBlob(blob) {
+async function readFromBlob(blob) {
   
   // blob is a Web API Blob or File
-  mm.parseBlob(blob).then(metadata => {
+  musicMetadata.parseBlob(blob).then(musicMetadata => {
     // metadata has all the metadata found in the blob or file
-  });
+  })
+
+}
+```
+Or with async/await if you prefer:
+```javascript
+async function readFromBlob(blob) {
+  
+  // blob is a Web API Blob or File
+  const metadata = await musicMetadata.parseBlob(blob);
+  // metadata has all the metadata found in the blob or file
+
 }
 ```
 
