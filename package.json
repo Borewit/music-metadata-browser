@@ -75,7 +75,7 @@
     "@types/jasmine": "^3.3.13",
     "@types/node": "^12.6.2",
     "coveralls": "^3.0.3",
-    "del-cli": "^2.0.0",
+    "del-cli": "^3.0.0",
     "eslint": "^6.2.2",
     "filereader-stream": "^2.0.0",
     "istanbul-instrumenter-loader": "^3.0.1",
