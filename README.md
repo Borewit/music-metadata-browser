@@ -10,7 +10,16 @@
 
 # music-metadata-browser
 
-[music-metadata](https://github.com/Borewit/music-metadata) release for the browser.
+[music-metadata-borwser](https://github.com/Borewit/music-metadata-browser) is a node module, designed to run on the browser.
+Because modules don't run directly in the browser you need a _module bundler_, like [webpack](https://webpack.js.org).
+The _module bundler_ turns the modules (dependencies), together with you application code, into a static asset (typically a minified JavaScript file).
+The output of _module bundler_ is compatible and optimized for execution by a web browser.
+
+Integration with React or Angular should ne be a problem:
+* [example project with React](https://github.com/Borewit/music-metadata-react)
+* [example project with Angular](https://github.com/Borewit/audio-tag-analyzer)
+
+If you prefer to parse files or streams server (node.js) side, you should use [music-metadata](https://github.com/Borewit/music-metadata) instead.
 
 ## Features
 
@@ -72,11 +81,6 @@ or yarn
 ```bash
 yarn add music-metadata-browser
 ```
-
-### Requirements
-[music-metadata-browser](https://www.npmjs.com/package/music-metadata-browser) is a module designed for a module bundler like [webpack](https://webpack.js.org/).
-A *module bundler* turns modules in static assets (typically one minified JavaScript file). 
-Those *static assets* are then prepared, made compatible and optimized for execution by a web browser.
 
 ### Import music-metadata
 
