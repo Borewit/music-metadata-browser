@@ -5,12 +5,12 @@ const path = require('path');
 
 module.exports = config => {
   config.set({
-    basePath: '.',
+    basePath: 'lib',
     frameworks: [
       'jasmine'
     ],
     files: [
-      {pattern: 'src/**/*.spec.ts'}
+      {pattern: '**/*.spec.ts'}
     ],
     preprocessors: {
       '**/*.ts': 'webpack',
@@ -18,7 +18,6 @@ module.exports = config => {
 
     webpack: {
       mode: 'development',
-      entry: './src/index.ts',
       resolve: {
         extensions: ['.tsx', '.ts', '.js']
       },
@@ -27,14 +26,12 @@ module.exports = config => {
         rules: [
           {
             test: /\.ts$/,
-            use: 'ts-loader',
-            include: path.resolve('src')
+            use: 'ts-loader'
           },
           {
             test: /\.ts$/,
             use: {loader: 'istanbul-instrumenter-loader'},
             enforce: 'post',
-            include: path.resolve('src'),
             exclude: /\.spec\.ts$/
           }
 
@@ -109,5 +106,8 @@ module.exports = config => {
     browsers: ['Chrome'],
     colors: true,
     singleRun: false,
+
+    browserNoActivityTimeout: 60000,
+    browserDisconnectTolerance: 3
   });
 };
