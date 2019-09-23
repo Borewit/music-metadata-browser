@@ -73,21 +73,21 @@ module.exports = config => {
         os: 'Windows',
         os_version: '10',
         browser: 'Chrome',
-        browser_version: '74.0'
+        browser_version: '77.0'
       },
       bs_win_firefox: {
         base: 'BrowserStack',
         os: 'Windows',
         os_version: '10',
         browser: 'Firefox',
-        browser_version: '66.0'
+        browser_version: '69.0'
       },
       bs_osx_safari: {
         base: 'BrowserStack',
         os: 'OS X',
         os_version: 'Mojave',
         browser: 'Safari',
-        browser_version: '12.0'
+        browser_version: '12.1'
       },
       bs_win_edge: {
         base: 'BrowserStack',
@@ -101,7 +101,7 @@ module.exports = config => {
         os: 'Windows',
         os_version: '10',
         browser: 'Opera',
-        browser_version: '60'
+        browser_version: '63'
       }
     },
 
