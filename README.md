@@ -10,9 +10,9 @@
 
 # music-metadata-browser
 
-[music-metadata-borwser](https://github.com/Borewit/music-metadata-browser) is a metadata parser, supporting virtual any audio format and tag header around.
+[music-metadata-browser](https://github.com/Borewit/music-metadata-browser) is a metadata parser, supporting virtual any audio format and tag header around.
 
-[music-metadata-borwser](https://github.com/Borewit/music-metadata-browser) is a node module, designed for modern browser applications.
+[music-metadata-browser](https://github.com/Borewit/music-metadata-browser) is a node module, designed for modern browser applications.
 Because modules don't run directly in the browser you need a _module bundler_, like [Webpack](https://webpack.js.org) or [Parcel](https://parceljs.org/).
 The _module bundler_ turns the modules (dependencies), together with you application code, into a static asset (typically a minified JavaScript file).
 The output of _module bundler_ is compatible and optimized for execution by a web browser.
