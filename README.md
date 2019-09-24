@@ -17,7 +17,7 @@ Because modules don't run directly in the browser you need a _module bundler_, l
 The _module bundler_ turns the modules (dependencies), together with you application code, into a static asset (typically a minified JavaScript file).
 The output of _module bundler_ is compatible and optimized for execution by a web browser.
 
-Integration with React or Angular should ne be a problem:
+Integration with React or Angular should not be a problem:
 *   [example project using React framework](https://github.com/Borewit/music-metadata-react)
 *   [example project using Angular framework](https://github.com/Borewit/audio-tag-analyzer)
 
