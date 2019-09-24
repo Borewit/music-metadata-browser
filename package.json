@@ -97,7 +97,7 @@
     "ts-loader": "^6.1.2",
     "tslint": "^5.16.0",
     "typescript": "^3.5.3",
-    "webpack": "^4.30.0"
+    "webpack": "^4.41.0"
   },
   "dependencies": {
     "assert": "^2.0.0",
