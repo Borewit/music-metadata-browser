@@ -66,8 +66,9 @@ Support for encoding / format details:
 *   encoding profile (e.g. [CBR](https://en.wikipedia.org/wiki/Constant_bitrate), V0, V2)
   
 ## Online demo's
-*   [<img src="https://gitcdn.xyz/repo/Borewit/audio-tag-analyzer/master/src/assets/icon/audio-tag-analyzer.svg" width="40">Audio Tag Analyzer](https://audio-tag-analyzer.netlify.com/)
+*   [<img src="https://gitcdn.xyz/repo/Borewit/audio-tag-analyzer/master/src/assets/icon/audio-tag-analyzer.svg" width="40"> Audio Tag Analyzer](https://audio-tag-analyzer.netlify.com/)
 *   [<img src="https://svgshare.com/i/8uW.svg" width="40"> Webamp](https://webamp.org/)
+*   [<img src="https://raw.githubusercontent.com/hvianna/audioMotion.js/master/public/img/favicon256.png" width="40"> audioMotion](https://hvianna.github.io/audioMotion.js)
 
 ### Donation
 Not required, but would be extremely motivating.
