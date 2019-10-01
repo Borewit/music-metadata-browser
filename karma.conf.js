@@ -108,6 +108,7 @@ module.exports = config => {
     singleRun: false,
 
     browserNoActivityTimeout: 60000,
-    browserDisconnectTolerance: 3
+    browserDisconnectTolerance: 3,
+    browserDisconnectTimeout: 10000
   });
 };
