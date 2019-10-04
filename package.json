@@ -80,7 +80,7 @@
     "@types/node": "^12.7.11",
     "coveralls": "^3.0.3",
     "del-cli": "^3.0.0",
-    "eslint": "^6.5.0",
+    "eslint": "^6.5.1",
     "filereader-stream": "^2.0.0",
     "istanbul-instrumenter-loader": "^3.0.1",
     "jasmine-core": "^3.5.0",
