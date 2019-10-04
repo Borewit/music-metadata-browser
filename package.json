@@ -76,7 +76,7 @@
     "post-codacy": " codacy-coverage < coverage/lcov.info"
   },
   "devDependencies": {
-    "@types/jasmine": "^3.4.1",
+    "@types/jasmine": "^3.4.2",
     "@types/node": "^12.7.11",
     "coveralls": "^3.0.3",
     "del-cli": "^3.0.0",
