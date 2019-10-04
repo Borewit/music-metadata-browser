@@ -58,7 +58,7 @@
   },
   "scripts": {
     "clean": "del-cli lib/**/*.js lib/**/*.js.map lib/**/*.d.ts coverage",
-    "compile-lib": "tsc -p lib/tsconfig.dist.json",
+    "compile-lib": "tsc -p lib/tsconfig.json",
     "compile-test": "tsc -p lib/tsconfig.spec.json",
     "prepublishOnly": "yarn run build",
     "build": "npm run compile-lib && npm run compile-test",
