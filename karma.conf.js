@@ -107,8 +107,10 @@ module.exports = config => {
     colors: true,
     singleRun: false,
 
-    browserNoActivityTimeout: 60000,
-    browserDisconnectTolerance: 3,
-    browserDisconnectTimeout: 10000
+    // Increase time-outs to prevent disconnects on BrowserStack
+    captureTimeout: 300000,
+    browserNoActivityTimeout: 300000,
+    browserDisconnectTimeout: 300000,
+    browserDisconnectTolerance: 3
   });
 };
