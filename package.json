@@ -84,7 +84,7 @@
     "filereader-stream": "^2.0.0",
     "istanbul-instrumenter-loader": "^3.0.1",
     "jasmine-core": "^3.5.0",
-    "karma": "^4.1.0",
+    "karma": "^4.4.0",
     "karma-browserstack-launcher": "^1.5.1",
     "karma-chrome-launcher": "^3.0.0",
     "karma-coverage-istanbul-reporter": "^2.0.5",
