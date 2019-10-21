@@ -15,7 +15,8 @@
     "prefer-for-of": false,
     "arrow-parens": [true, "ban-single-arg-parens"],
     "no-implicit-dependencies": [true, "dev"],
-    "no-submodule-imports": [true, "music-metadata"]
+    "no-submodule-imports": [true, "music-metadata"],
+    "ordered-imports": false
   },
   "jsRules": {
     "curly": false
