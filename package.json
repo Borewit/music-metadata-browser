@@ -6,7 +6,8 @@
   "typings": "lib/index",
   "files": [
     "lib/**/*.js",
-    "lib/**/*.d.ts"
+    "lib/**/*.d.ts",
+    "umd/**/*.js"
   ],
   "repository": "https://github.com/Borewit/music-metadata-browser.git",
   "author": {
@@ -60,8 +61,9 @@
     "clean": "del-cli lib/**/*.js lib/**/*.js.map lib/**/*.d.ts coverage",
     "compile-lib": "tsc -p lib/tsconfig.json",
     "compile-test": "tsc -p lib/tsconfig.spec.json",
+    "compile-umd": "webpack",
     "prepublishOnly": "yarn run build",
-    "build": "npm run compile-lib && npm run compile-test",
+    "build": "npm run compile-lib && npm run compile-test && npm run compile-umd",
     "tslint": "tslint 'lib/**/*.ts' --exclude 'lib/**/*.d.ts'",
     "eslint": "eslint karma.conf.js",
     "lint": "npm run tslint && npm run eslint",
@@ -97,7 +99,8 @@
     "ts-loader": "^6.2.0",
     "tslint": "^5.16.0",
     "typescript": "^3.6.4",
-    "webpack": "^4.41.2"
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
   },
   "dependencies": {
     "assert": "^2.0.0",
