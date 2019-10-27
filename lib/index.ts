@@ -2,7 +2,7 @@ import { Buffer } from 'buffer';
 import * as initDebug from 'debug';
 import * as mm from 'music-metadata/lib/core';
 import * as Type from 'music-metadata/lib/type';
-import { ReadableWeToNodeStream } from 'readable-web-to-node-stream';
+import { ReadableWebToNodeStream } from 'readable-web-to-node-stream';
 import * as toBuffer from 'typedarray-to-buffer';
 
 const debug = initDebug('music-metadata-browser:main');
@@ -29,7 +29,7 @@ export const parseNodeStream = mm.parseStream;
  * @returns {Promise<IAudioMetadata>}
  */
 export async function parseReadableStream(stream: ReadableStream, contentType, options?: IOptions): Promise<IAudioMetadata> {
-  const ns = new ReadableWeToNodeStream(stream);
+  const ns = new ReadableWebToNodeStream(stream);
   const res = await parseNodeStream(ns, contentType, options);
   debug(`Completed parsing from stream bytesRead=${ns.bytesRead} / fileSize=${options && options.fileSize ? options.fileSize : '?'}`);
   await ns.close();
