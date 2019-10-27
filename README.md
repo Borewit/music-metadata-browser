@@ -69,6 +69,7 @@ Support for encoding / format details:
 *   [<img src="https://gitcdn.xyz/repo/Borewit/audio-tag-analyzer/master/src/assets/icon/audio-tag-analyzer.svg" width="40"> Audio Tag Analyzer](https://audio-tag-analyzer.netlify.com/)
 *   [<img src="https://svgshare.com/i/8uW.svg" width="40"> Webamp](https://webamp.org/)
 *   [<img src="https://raw.githubusercontent.com/hvianna/audioMotion.js/master/public/img/favicon256.png" width="40"> audioMotion](https://hvianna.github.io/audioMotion.js)
+*   [<img src="https://diffuse.sh/images/diffuse-dark.svg" alt="Diffuse" width="160">](https://diffuse.sh/)
 
 ### Donation
 Not required, but would be extremely motivating.
