@@ -105,7 +105,7 @@
     "debug": "^4.0.1",
     "music-metadata": "^4.8.2",
     "readable-stream": "^3.3.0",
-    "readable-web-to-node-stream": "^1.1.4",
+    "readable-web-to-node-stream": "^2.0.0",
     "remove": "^0.1.5",
     "typedarray-to-buffer": "^3.1.5"
   }
