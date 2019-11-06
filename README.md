@@ -242,7 +242,7 @@ If the returned promise resolves, the metadata (TypeScript `IAudioMetadata` inte
 
 *   [`format: IFormat`](#format) Audio format information
 *   `native: INativeTags` List of native (original) tags found in the parsed audio file. If the native option is set to false, this property is not defined.
-*   [`common: ICommonTagsResult`](doc/common_metadata.md) Is a generic (abstract) way of reading metadata information. 
+*   [`common: ICommonTagsResult`](https://github.com/Borewit/music-metadata/blob/master/doc/common_metadata.md) Is a generic (abstract) way of reading metadata information. 
   
 #### Format
   
@@ -261,7 +261,7 @@ Audio format information. Defined in the TypeScript `IFormat` interface:
   
 #### Common
 
-[Common tag documentation](doc/common_metadata.md) is automatically generated.
+[Common tag documentation](https://github.com/Borewit/music-metadata/blob/master/doc/common_metadata.md) is automatically generated.
 
 #### Automated testing
 
