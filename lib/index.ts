@@ -1,16 +1,13 @@
 import { Buffer } from 'buffer';
 import * as initDebug from 'debug';
+import { IAudioMetadata, IOptions, ITag, INativeTagDict } from 'music-metadata/lib/type';
 import * as mm from 'music-metadata/lib/core';
-import * as Type from 'music-metadata/lib/type';
 import { ReadableWebToNodeStream } from 'readable-web-to-node-stream';
 import * as toBuffer from 'typedarray-to-buffer';
 
 const debug = initDebug('music-metadata-browser:main');
 
-export type IAudioMetadata = Type.IAudioMetadata;
-export type IOptions = Type.IOptions;
-export type ITag = Type.ITag;
-export type INativeTagDict = Type.INativeTagDict;
+export { IPicture, IAudioMetadata, IOptions, ITag, INativeTagDict } from 'music-metadata/lib/type';
 
 /**
  * Parse audio Stream
