@@ -3115,16 +3115,16 @@ ms@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
 
-music-metadata@^4.8.4:
-  version "4.8.4"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-4.8.4.tgz#e4d1dd285b47ce6dde2388509f85c2f13f8672d5"
-  integrity sha512-Di6EVUG7BT/acgr7U+b2U89DtzQRLOV5LvjsnPzY0riqEDqio3lCJ15QNDoG7dQfT5bV0VL/ocLk7tUeh9fubA==
+music-metadata@^4.9.0:
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-4.9.0.tgz#ce88badf03b12b3b1b57cefee1a835d73dca9fb1"
+  integrity sha512-wBAZItd+dllv0osHIteiOLHuPFxia+NqRwVCkidx+Of+JjfiZDN9sD5wBat8sBGM0pe/w4vU6r2xo1S7Q2oTzg==
   dependencies:
     content-type "^1.0.4"
     debug "^4.1.0"
     file-type "^12.4.0"
     media-typer "^1.1.0"
-    strtok3 "^3.0.6"
+    strtok3 "^3.1.0"
     token-types "^1.1.0"
 
 mute-stream@0.0.8:
@@ -4348,10 +4348,10 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-strtok3@^3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-3.0.6.tgz#b75ad4bd00146b8bc56507266cc08df0a02b4fec"
-  integrity sha512-suDDUDB4vP0YN6xuPGDY3DZAITzzNc2kNZ+TSshi5UsD6lc/XgRAx6bdN8DD67382lxdgBNFfzLUmpRGqr5EuA==
+strtok3@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-3.1.0.tgz#7360e330e682015dd5111f2f646f61ab548573c3"
+  integrity sha512-p1GtkNh8xMm40GVmhcVyH8eOxAYhsC7aQd5Fe5btLEVR0QhLc9tmOsvmYKAmyQbIuE3SlGfhkdzugonHjNqpQA==
   dependencies:
     debug "^4.1.1"
     then-read-stream "^2.0.8"
