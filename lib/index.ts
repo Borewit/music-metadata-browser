@@ -1,6 +1,6 @@
 import { Buffer } from 'buffer';
 import * as initDebug from 'debug';
-import { IAudioMetadata, IOptions, ITag, INativeTagDict } from 'music-metadata/lib/type';
+import { IAudioMetadata, IOptions } from 'music-metadata/lib/type';
 import * as mm from 'music-metadata/lib/core';
 import { ReadableWebToNodeStream } from 'readable-web-to-node-stream';
 import * as toBuffer from 'typedarray-to-buffer';
