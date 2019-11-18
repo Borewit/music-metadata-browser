@@ -7,7 +7,7 @@ import * as toBuffer from 'typedarray-to-buffer';
 
 const debug = initDebug('music-metadata-browser:main');
 
-export { IPicture, IAudioMetadata, IOptions, ITag, INativeTagDict } from 'music-metadata/lib/type';
+export { IPicture, IAudioMetadata, IOptions, ITag, INativeTagDict, IChapter } from 'music-metadata/lib/type';
 
 /**
  * Parse audio Stream

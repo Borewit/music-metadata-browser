@@ -41,18 +41,16 @@ interface IParserTest {
 const parsers: IParserTest[] = [
   {
     methodDescription: 'parseStream()',
-    parseUrl: (audioTrackUrl, options) => {
-      return httpGetByUrl(audioTrackUrl).then(stream => {
-        return mm.parseNodeStream(stream, (stream as any).type, options);
-      });
+    parseUrl: async (audioTrackUrl, options) => {
+      const stream = await httpGetByUrl(audioTrackUrl);
+      return mm.parseNodeStream(stream, (stream as any).type, options);
     }
   },
   {
     methodDescription: 'parseBlob()',
-    parseUrl: (audioTrackUrl, options) => {
-      return getAsBlob(audioTrackUrl).then(blob => {
-        return mm.parseBlob(blob, options);
-      });
+    parseUrl: async (audioTrackUrl, options) => {
+      const blob = await getAsBlob(audioTrackUrl);
+      return mm.parseBlob(blob, options);
     }
   },
   {
@@ -69,37 +67,36 @@ xdescribe('music-metadata-browser', () => {
 
     parsers.forEach(parser => {
 
-      it(parser.methodDescription, () => {
-        return parser.parseUrl(urlInBloom, {native: true}).then(metadata => {
-          expect(metadata).toBeDefined();
+      it(parser.methodDescription, async () => {
+        const metadata = await parser.parseUrl(urlInBloom);
+        expect(metadata).toBeDefined();
 
-          expect(metadata.format.tagTypes).toEqual(['vorbis'], 'expect Vorbis metadata header');
-          expect(metadata.format.duration).toEqual(2.0, 'duration should be 2.0 sec');
-          expect(metadata.format.sampleRate).toEqual(44100, 'sample-rate should be 44.1 kHz');
-          expect(metadata.format.numberOfChannels).toEqual(2, 'number of channels should be 2 (stereo)');
-          expect(metadata.format.bitrate).toEqual(64000, 'bitrate should be 64 kbit/sec');
+        expect(metadata.format.tagTypes).toEqual(['vorbis'], 'expect Vorbis metadata header');
+        expect(metadata.format.duration).toEqual(2.0, 'duration should be 2.0 sec');
+        expect(metadata.format.sampleRate).toEqual(44100, 'sample-rate should be 44.1 kHz');
+        expect(metadata.format.numberOfChannels).toEqual(2, 'number of channels should be 2 (stereo)');
+        expect(metadata.format.bitrate).toEqual(64000, 'bitrate should be 64 kbit/sec');
 
-          expect(metadata.common.title).toEqual('In Bloom');
-          expect(metadata.common.artist).toEqual('Nirvana');
-          expect(metadata.common.albumartist).toEqual('Nirvana', 'common.albumartist');
-          expect(metadata.common.album).toEqual('Nevermind', 'common.album');
-          expect(metadata.common.year).toEqual(1991, 'common.year');
-          expect(metadata.common.track).toEqual({no: 2, of: 12}, 'common.track');
-          expect(metadata.common.disk).toEqual({no: 1, of: 1}, 'common.disk');
-          expect(metadata.common.genre).toEqual(['Grunge', 'Alternative'], 'genre');
-          expect(metadata.common.picture[0].format).toEqual('image/jpeg', 'picture format');
-          expect(metadata.common.picture[0].data.length).toEqual(30966, 'picture length');
-          expect(metadata.common.barcode).toEqual('0720642442524', 'common.barcode (including leading zero)');
-          expect(metadata.common.asin).toEqual('B000003TA4', 'common.asin');
-          expect(metadata.common.catalognumber).toEqual(['GED24425'], 'common.asin');
-          expect(metadata.common.isrc).toEqual(['USGF19942502'], 'common.isrc');
+        expect(metadata.common.title).toEqual('In Bloom');
+        expect(metadata.common.artist).toEqual('Nirvana');
+        expect(metadata.common.albumartist).toEqual('Nirvana', 'common.albumartist');
+        expect(metadata.common.album).toEqual('Nevermind', 'common.album');
+        expect(metadata.common.year).toEqual(1991, 'common.year');
+        expect(metadata.common.track).toEqual({no: 2, of: 12}, 'common.track');
+        expect(metadata.common.disk).toEqual({no: 1, of: 1}, 'common.disk');
+        expect(metadata.common.genre).toEqual(['Grunge', 'Alternative'], 'genre');
+        expect(metadata.common.picture[0].format).toEqual('image/jpeg', 'picture format');
+        expect(metadata.common.picture[0].data.length).toEqual(30966, 'picture length');
+        expect(metadata.common.barcode).toEqual('0720642442524', 'common.barcode (including leading zero)');
+        expect(metadata.common.asin).toEqual('B000003TA4', 'common.asin');
+        expect(metadata.common.catalognumber).toEqual(['GED24425'], 'common.asin');
+        expect(metadata.common.isrc).toEqual(['USGF19942502'], 'common.isrc');
 
-          // Make sure the orderTags is working
-          const vorbisTags = mm.orderTags(metadata.native.vorbis);
+        // Make sure the orderTags is working
+        const vorbisTags = mm.orderTags(metadata.native.vorbis);
 
-          expect(vorbisTags.TRACKNUMBER).toEqual(['2'], 'vorbis.TRACKNUMBER');
-          expect(vorbisTags.TRACKTOTAL).toEqual(['12'], 'vorbis.TRACKTOTAL');
-        });
+        expect(vorbisTags.TRACKNUMBER).toEqual(['2'], 'vorbis.TRACKNUMBER');
+        expect(vorbisTags.TRACKTOTAL).toEqual(['12'], 'vorbis.TRACKTOTAL');
 
       }, 5000);
     });
@@ -118,12 +115,11 @@ describe('Parse Tiuqottigeloot Vol 24 tracks', () => {
     describe(`Parser: ${parser.methodDescription}`, () => {
 
       tiuqottigeloot_vol24_Tracks.forEach(track => {
-        it(`track ${track.metaData.artist} - ${track.metaData.title}`, () => {
+        it(`track ${track.metaData.artist} - ${track.metaData.title}`, async () => {
           const url = providers.netlify.getUrl(track.url);
-          return parser.parseUrl(url).then(metadata => {
-            expect(metadata.common.artist).toEqual(track.metaData.artist);
-            expect(metadata.common.title).toEqual(track.metaData.title);
-          });
+          const metadata = await parser.parseUrl(url);
+          expect(metadata.common.artist).toEqual(track.metaData.artist);
+          expect(metadata.common.title).toEqual(track.metaData.title);
         });
       });
     });
