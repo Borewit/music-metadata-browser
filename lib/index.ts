@@ -51,6 +51,11 @@ export const parseBuffer = mm.parseBuffer;
  */
 export function parseBlob(blob: Blob, options?: IOptions): Promise<IAudioMetadata> {
   return convertBlobToBuffer(blob).then(buf => {
+    if ((blob as File).name) {
+      options = options ? options : {};
+      options.path = (blob as File).name; // Store name as possible type fallback
+      debug('options.path', options.path);
+    }
     return mm.parseBuffer(buf, blob.type, options);
   });
 }
