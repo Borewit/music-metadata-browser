@@ -24,4 +24,19 @@ update_configs:
           dependency_name: "coveralls"
       - match:
           dependency_name: "nyc"
-
+      - match:
+          dependency_name: "karma-coverage-istanbul-reporter"
+          update_type: "semver:minor"
+      - match:
+          dependency_name: "karma-jasmine"
+          update_type: "semver:minor"
+      - match:
+          dependency_name: "karma-spec-reporter"
+          update_type: "semver:minor"
+      - match:
+          dependency_name: "karma-webpack"
+          update_type: "semver:minor"
+      - match:
+          dependency_name: "ts-loader"
+      - match:
+          dependency_name: "webpack"
