@@ -43,3 +43,6 @@ update_configs:
           dependency_name: "ts-loader"
       - match:
           dependency_name: "webpack"
+      - match:
+          dependency_name: "es-lint"
+
