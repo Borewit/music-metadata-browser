@@ -3129,9 +3129,9 @@ ms@^2.1.1:
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
 music-metadata@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-5.0.1.tgz#94aaadba5e82645108c7a8d2cc772e8e7befaeb9"
-  integrity sha512-LFqfMkb/NhTZv21KZckPdUNoiNPgRl8cF2Qid0CThaoNBPCy+8RuYh0MaAQQoEbzt+RbIGz2ctzv8TPoiNv7kw==
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-5.0.2.tgz#e9e2197155ec60fa6ce1474427c0bad86d14f441"
+  integrity sha512-iw4pdV/gh+QL8DV5cXXnGVc8MF4m/JYTIYhnSuCrrMNh1xiB4+CK7MxehF5EmimW1NkZQrQK/umWOaQ5yweb/g==
   dependencies:
     content-type "^1.0.4"
     debug "^4.1.0"
