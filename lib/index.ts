@@ -9,21 +9,23 @@ const debug = initDebug('music-metadata-browser:main');
 
 export { IPicture, IAudioMetadata, IOptions, ITag, INativeTagDict, IChapter } from 'music-metadata/lib/type';
 
+export {  parseBuffer, parseFromTokenizer, orderTags, ratingToStars } from 'music-metadata/lib/core';
+
 /**
  * Parse audio Stream
- * @param stream
- * @param {string} contentType MIME-Type
- * @param {IOptions} options Parsing options
- * @returns {Promise<IAudioMetadata>}
+ * @param stream - ReadableStream
+ * @param contentType - MIME-Type
+ * @param options - Parsing options
+ * @returns Metadata via promise
  */
 export const parseNodeStream = mm.parseStream;
 
 /**
  * Parse Web API ReadableStream: https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream
- * @param {ReadableStream} stream ReadableStream
- * @param {string} contentType MIME-Type
+ * @param stream - ReadableStream
+ * @param contentType MIME-Type
  * @param {IOptions} options Parsing options
- * @returns {Promise<IAudioMetadata>}
+ * @returns Metadata via promise
  */
 export async function parseReadableStream(stream: ReadableStream, contentType, options?: IOptions): Promise<IAudioMetadata> {
   const ns = new ReadableWebToNodeStream(stream);
@@ -34,20 +36,10 @@ export async function parseReadableStream(stream: ReadableStream, contentType, o
 }
 
 /**
- * Parse audio from Node Buffer
- * @param {Stream.Readable} stream Audio input stream
- * @param {string} mimeType <string> Content specification MIME-type, e.g.: 'audio/mpeg'
- * @param {IOptions} options Parsing options
- * @returns {Promise<IAudioMetadata>}
- * Ref: https://github.com/Borewit/strtok3/blob/e6938c81ff685074d5eb3064a11c0b03ca934c1d/src/index.ts#L15
- */
-export const parseBuffer = mm.parseBuffer;
-
-/**
  * Parse Web API File
- * @param {Blob} blob
- * @param {IOptions} options Parsing options
- * @returns {Promise<IAudioMetadata>}
+ * @param blob - Blob to parse
+ * @param options - Parsing options
+ * @returns Metadata via promise
  */
 export function parseBlob(blob: Blob, options?: IOptions): Promise<IAudioMetadata> {
   return convertBlobToBuffer(blob).then(buf => {
@@ -57,9 +49,9 @@ export function parseBlob(blob: Blob, options?: IOptions): Promise<IAudioMetadat
 
 /**
  * Parse fetched file, using the Web Fetch API
- * @param {string} audioTrackUrl URL to download the audio track from
- * @param {IOptions} options Parsing options
- * @returns {Promise<IAudioMetadata>}
+ * @param audioTrackUrl - URL to download the audio track from
+ * @param options - Parsing options
+ * @returns Metadata via promise
  */
 export async function fetchFromUrl(audioTrackUrl: string, options?: IOptions): Promise<IAudioMetadata> {
   const response = await fetch(audioTrackUrl);
@@ -87,15 +79,6 @@ export async function fetchFromUrl(audioTrackUrl: string, options?: IOptions): P
 }
 
 /**
- * Parse audio from ITokenizer source
- * @param {strtok3.ITokenizer} Audio source implementing the tokenizer interface
- * @param {string} mimeType <string> Content specification MIME-type, e.g.: 'audio/mpeg'
- * @param {IOptions} options Parsing options
- * @returns {Promise<IAudioMetadata>}
- */
-export const parseFromTokenizer = mm.parseFromTokenizer;
-
-/**
  * Convert Web API File to Node Buffer
  * @param {Blob} blob Web API Blob
  * @returns {Promise<Buffer>}
@@ -120,17 +103,3 @@ function convertBlobToBuffer(blob: Blob): Promise<Buffer> {
     fileReader.readAsArrayBuffer(blob);
   });
 }
-
-/**
- * Create a dictionary ordered by their tag id (key)
- * @param {ITag[]} nativeTags list of tags
- * @returns {INativeTagDict} Tags indexed by id
- */
-export const orderTags = mm.orderTags;
-
-/**
- * Convert rating to 1-5 star rating
- * @param {number} rating Normalized rating [0..1] (common.rating[n].rating)
- * @returns {number} Number of stars: 1, 2, 3, 4 or 5 stars
- */
-export const ratingToStars = mm.ratingToStars;
