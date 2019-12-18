@@ -27,3 +27,5 @@ update_configs:
           dependency_name: "nyc"
       - match:
           dependency_name: "webpack"
+      - match:
+          dependency_name: "@types/jasmine"
