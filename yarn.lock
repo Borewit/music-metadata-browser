@@ -2208,7 +2208,7 @@ iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
-ieee754@^1.1.4:
+ieee754@^1.1.13, ieee754@^1.1.4:
   version "1.1.13"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.13.tgz#ec168558e95aa181fd87d37f55c32bbcb6708b84"
 
@@ -3124,17 +3124,17 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-music-metadata@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-5.1.1.tgz#da95ffc04791aea553b5737e44ddb5aa6ec64ba9"
-  integrity sha512-UWXFEzQpgLdXnqtP81YgDawVq71kKYjeujYgtir/RRlTs/HrkA5H8Ql96wnv9XwwcZ+GsOS9lxYEPlhOiSvXFw==
+music-metadata@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-5.2.0.tgz#ebeb97a0d86c79ef43f75e517e5bf35f9498157c"
+  integrity sha512-0ya4ct9T7RqTCa2aFacTs9N7pUXq6/1vG1Nnr8P36u6UQO1nRpD7O0InK3IcASiwSrGaCw1PnYrQek33T+/C9w==
   dependencies:
     content-type "^1.0.4"
     debug "^4.1.0"
     file-type "^12.4.0"
     media-typer "^1.1.0"
-    strtok3 "^3.1.0"
-    token-types "^1.1.0"
+    strtok3 "^3.1.4"
+    token-types "^1.2.2"
 
 mute-stream@0.0.8:
   version "0.0.8"
@@ -4360,14 +4360,14 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-strtok3@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-3.1.0.tgz#7360e330e682015dd5111f2f646f61ab548573c3"
-  integrity sha512-p1GtkNh8xMm40GVmhcVyH8eOxAYhsC7aQd5Fe5btLEVR0QhLc9tmOsvmYKAmyQbIuE3SlGfhkdzugonHjNqpQA==
+strtok3@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-3.1.4.tgz#3498446fba1ac483005110d950eb79eb8cef7bb6"
+  integrity sha512-K8qbPskXA2dR8UTBb0zt+UBSZZaSS3pnB+1xLF3Dt0S37Chu3IsIYKhsHQuKD3Cm6A/3lUMCBG2I7sQKLy/BBQ==
   dependencies:
     debug "^4.1.1"
     then-read-stream "^2.0.8"
-    token-types "^1.1.0"
+    token-types "^1.2.2"
 
 supports-color@^2.0.0:
   version "2.0.0"
@@ -4520,10 +4520,12 @@ toidentifier@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
 
-token-types@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/token-types/-/token-types-1.1.0.tgz#8bf60f633583089a8653005bdff96020e44f947e"
-  integrity sha512-CgM5GmtJaZ+uTOiZHzs9pwUa/udjEVl/cxQ2KGpl88Hh7k71sdBz9j95dYjx83O68B6CGvefm29l4rBZq1PeuQ==
+token-types@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/token-types/-/token-types-1.2.2.tgz#bd79e5a16ca16ff95d9e2f87cd24b164fb5c523a"
+  integrity sha512-PG5qoX5kwZELQdW2UCemTtT22eAiuBpMt64KuJRXdhrS8ppdVGPlniGZS2ACA42cur+u2V5UNy3Qf1LCUjHU4w==
+  dependencies:
+    ieee754 "^1.1.13"
 
 tough-cookie@~2.4.3:
   version "2.4.3"
