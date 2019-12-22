@@ -52,7 +52,10 @@
     "dsf",
     "mpc",
     "dff",
-    "dsdiff"
+    "dsdiff",
+    "info",
+    "parse",
+    "parser"
   ],
   "license": "MIT",
   "bugs": {
