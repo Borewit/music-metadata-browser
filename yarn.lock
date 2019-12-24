@@ -3124,16 +3124,16 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-music-metadata@^5.3.1:
-  version "5.3.1"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-5.3.1.tgz#c375e2c0be89f86945a110e6a2e6383fd146724d"
-  integrity sha512-fXVLqvGFsfcX7HqHpQjS++Gad/WagEbwzuK5C8lkToTyhW27WLO46Ily84Ym/PlfIU9H/NK/S0NCNLoVQCSS1w==
+music-metadata@^5.3.2:
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-5.3.2.tgz#ec96eb8991d83c723c2e93b9f558e568af929cc1"
+  integrity sha512-xck0n/X0+lteljpK5JtMBYtLpZfc75RHNrVdMx1ESpWlCO7IEZWlALl/ROKpnluocBExQMd217WTH5t/EYJk/Q==
   dependencies:
     content-type "^1.0.4"
     debug "^4.1.0"
     file-type "^12.4.2"
     media-typer "^1.1.0"
-    strtok3 "^3.1.4"
+    strtok3 "^3.1.7"
     token-types "^1.2.2"
 
 mute-stream@0.0.8:
@@ -4360,14 +4360,13 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-strtok3@^3.1.4:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-3.1.4.tgz#3498446fba1ac483005110d950eb79eb8cef7bb6"
-  integrity sha512-K8qbPskXA2dR8UTBb0zt+UBSZZaSS3pnB+1xLF3Dt0S37Chu3IsIYKhsHQuKD3Cm6A/3lUMCBG2I7sQKLy/BBQ==
+strtok3@^3.1.7:
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-3.1.7.tgz#e236e955e7c93c156442a06f7b385a90a7f528d4"
+  integrity sha512-N0qFNf5vkyXgaPr4AHRmCTqdFwTnB1LxX3xo1N5KHMLhqircDdL9m8qem3Lpb8IIuJaNL1Jddazvb9WRwUdSlw==
   dependencies:
     debug "^4.1.1"
     then-read-stream "^2.0.8"
-    token-types "^1.2.2"
 
 supports-color@^2.0.0:
   version "2.0.0"
