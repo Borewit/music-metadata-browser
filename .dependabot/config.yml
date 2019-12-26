@@ -7,7 +7,6 @@ update_configs:
     automerged_updates:
       - match:
           dependency_name: "@types/node"
-          update_type: "semver:minor"
       - match:
           dependency_name: "music-metadata"
           update_type: "semver:minor"
@@ -29,3 +28,7 @@ update_configs:
           dependency_name: "webpack"
       - match:
           dependency_name: "@types/jasmine"
+      - match:
+          dependency_name: "karma-jasmine-html-reporter"
+      - match:
+          dependency_name: "eslint"
