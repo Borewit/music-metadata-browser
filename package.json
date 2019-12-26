@@ -3,7 +3,7 @@
   "version": "1.10.0",
   "description": "Browserifed version of music-metadata",
   "main": "lib/index.js",
-  "typings": "lib/index",
+  "typings": "lib/index.d.ts",
   "files": [
     "lib/**/*.js",
     "lib/**/*.d.ts"
