@@ -79,13 +79,15 @@ Support for encoding / format details:
 Not required, but would be extremely motivating.
 [PayPal.me](https://paypal.me/borewit)
 
+## Usage
+
 ### Installation
 Install via [npm](http://npmjs.org/):
 
 ```bash
 npm install music-metadata-browser
 ```
-or yarn
+or using [yarn](https://yarnpkg.com/):
 ```bash
 yarn add music-metadata-browser
 ```
