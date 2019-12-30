@@ -9,28 +9,27 @@ const debug = initDebug('music-metadata-browser:main');
 
 export { IPicture, IAudioMetadata, IOptions, ITag, INativeTagDict, IChapter } from 'music-metadata/lib/type';
 
-export {  parseBuffer, parseFromTokenizer, orderTags, ratingToStars } from 'music-metadata/lib/core';
+export {  parseBuffer, parseFromTokenizer, orderTags, ratingToStars, IFileInfo } from 'music-metadata/lib/core';
 
 /**
  * Parse audio Stream
  * @param stream - ReadableStream
  * @param contentType - MIME-Type
  * @param options - Parsing options
- * @returns Metadata via promise
+ * @returns Metadata
  */
 export const parseNodeStream = mm.parseStream;
 
 /**
  * Parse Web API ReadableStream: https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream
  * @param stream - ReadableStream
- * @param contentType MIME-Type
- * @param {IOptions} options Parsing options
- * @returns Metadata via promise
+ * @param fileInfo FileInfo object or MIME-Type
+ * @param options - Parsing options
+ * @returns Metadata
  */
-export async function parseReadableStream(stream: ReadableStream, contentType, options?: IOptions): Promise<IAudioMetadata> {
+export async function parseReadableStream(stream: ReadableStream, fileInfo?: mm.IFileInfo | string, options?: IOptions): Promise<IAudioMetadata> {
   const ns = new ReadableWebToNodeStream(stream);
-  const res = await parseNodeStream(ns, contentType, options);
-  debug(`Completed parsing from stream bytesRead=${ns.bytesRead} / fileSize=${options && options.fileSize ? options.fileSize : '?'}`);
+  const res = await parseNodeStream(ns, typeof fileInfo === 'string' ? {mimeType: fileInfo} : fileInfo, options);
   await ns.close();
   return res;
 }
@@ -39,30 +38,32 @@ export async function parseReadableStream(stream: ReadableStream, contentType, o
  * Parse Web API File
  * @param blob - Blob to parse
  * @param options - Parsing options
- * @returns Metadata via promise
+ * @returns Metadata
  */
-export function parseBlob(blob: Blob, options?: IOptions): Promise<IAudioMetadata> {
-  return convertBlobToBuffer(blob).then(buf => {
-    return mm.parseBuffer(buf, blob.type, options);
-  });
+export async function parseBlob(blob: Blob, options?: IOptions): Promise<IAudioMetadata> {
+  const buf = await convertBlobToBuffer(blob);
+  const fileInfo: mm.IFileInfo = {mimeType: blob.type, size: blob.size};
+  if ((blob as File).name) {
+    fileInfo.path = (blob as File).name;
+  }
+  return mm.parseBuffer(buf, {mimeType: blob.type, size: blob.size}, options);
 }
 
 /**
  * Parse fetched file, using the Web Fetch API
  * @param audioTrackUrl - URL to download the audio track from
  * @param options - Parsing options
- * @returns Metadata via promise
+ * @returns Metadata
  */
 export async function fetchFromUrl(audioTrackUrl: string, options?: IOptions): Promise<IAudioMetadata> {
   const response = await fetch(audioTrackUrl);
-  const contentType = response.headers.get('Content-Type');
-  const headers = [];
-  response.headers.forEach(header => {
-    headers.push(header);
-  });
+  const fileInfo: mm.IFileInfo = {
+    size: parseInt(response.headers.get('Content-Length'), 10),
+    mimeType: response.headers.get('Content-Type')
+  };
   if (response.ok) {
     if (response.body) {
-      const res = await this.parseReadableStream(response.body, contentType, options);
+      const res = await this.parseReadableStream(response.body, fileInfo, options);
       debug('Closing HTTP-readable-stream...');
       if (!response.body.locked) { // Prevent error in Firefox
         await response.body.cancel();
@@ -80,8 +81,8 @@ export async function fetchFromUrl(audioTrackUrl: string, options?: IOptions): P
 
 /**
  * Convert Web API File to Node Buffer
- * @param {Blob} blob Web API Blob
- * @returns {Promise<Buffer>}
+ * @param blob - Web API Blob
+ * @returns Metadata
  */
 function convertBlobToBuffer(blob: Blob): Promise<Buffer> {
   return new Promise<Buffer>((resolve, reject) => {
