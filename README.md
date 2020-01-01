@@ -114,42 +114,34 @@ There are currently three ways to parse (read) audio tracks:
 
 #### parseBlob function
 
-To convert a [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) or [File](https://developer.mozilla.org/en-US/docs/Web/API/File) into a [stream](https://nodejs.org/api/stream.html#stream_readable_streams), 
-[filereader-stream](https://www.npmjs.com/package/filereader-stream) is used.
+Parse an audio file from a [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) or [File](https://developer.mozilla.org/en-US/docs/Web/API/File).
 
-```javascript
+```js
 const musicMetadata = request('music-metadata-browser');
 
-/**
-* @param blob Blob (e.g. Web API File)
-*/
-async function readFromBlob(blob) {
-  
-  // blob is a Web API Blob or File
-  musicMetadata.parseBlob(blob).then(musicMetadata => {
-    // metadata has all the metadata found in the blob or file
-  })
+let blob;
 
-}
+musicMetadata.parseBlob(blob).then(metadata => {
+    // metadata has all the metadata found in the blob or file
+  });
 ```
 Or with async/await if you prefer:
-```javascript
-async function readFromBlob(blob) {
-  
-  // blob is a Web API Blob or File
+```js
+(async () => {
+  let blob;
+
   const metadata = await musicMetadata.parseBlob(blob);
   // metadata has all the metadata found in the blob or file
-
-}
+});
 ```
 
 #### parseReadableStream function
 
-```javascript
+```js
 import * as mm from 'music-metadata-browser';
 
 mm.parseReadableStream(readableStream)
-  .then( metadata => {
+  .then(metadata => {
      console.log(util.inspect(metadata, { showHidden: false, depth: null }));
      readableStream.close();
    });
@@ -162,12 +154,12 @@ It is recommended to provide the corresponding [MIME-type](https://developer.moz
 An extension (e.g.: `.mp3`), filename or path will also work.
 If the MIME-type or filename is not provided, or not understood, music-metadata will try to derive the type from the content.
 
-```javascript
+```js
 import * as mm from 'music-metadata-browser';
 
 const readableStream = result.node;
 
-mm.parseReadableStream(readableStream, 'audio/mpeg', { fileSize: 26838 })
+mm.parseReadableStream(readableStream, {size: 21032, mimeType: 'audio/mpeg'})
   .then( metadata => {
      console.log(util.inspect(metadata, { showHidden: false, depth: null }));
      someReadStream.cancel();
@@ -176,7 +168,7 @@ mm.parseReadableStream(readableStream, 'audio/mpeg', { fileSize: 26838 })
  
 #### parseNodeStream function
 
-```javascript
+```js
 import * as mm from 'music-metadata-browser';
 
 mm.parseNodeStream(readableStream)
@@ -192,24 +184,23 @@ If available, pass the mime-type and file-size. Without the mime-type, the conte
 ```javascript
 import * as mm from 'music-metadata-browser';
 
-mm.parseNodeStream(someReadStream, 'audio/mpeg', { fileSize: 26838 })
-  .then( metadata => {
-     console.log(util.inspect(metadata, { showHidden: false, depth: null }));
-     someReadStream.close();
-   });
+(async () => {
+  const metadata = await mm.parseNodeStream(someReadStream, {mimeType: 'audio/mpeg', size: 26838 });
+  console.log(util.inspect(metadata, { showHidden: false, depth: null }));
+  someReadStream.close();
+});
 ```
 
 ### fetchUrl function
 
 If you wish to stream your audio track over HTTP you need can use `fetchFromUrl` which is using the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) to retrieve the audio track:
 
-```javascript
+```js
 import * as mm from 'music-metadata-browser';
 
-/**
-* Stream over HTTP from URL
-*/
-return mm.fetchFromUrl(audioTrackUrl, options)
+(async () => {
+  const metadata = await mm.fetchFromUrl(audioTrackUrl, options);
+});
 ```
 
 #### orderTags function
@@ -224,9 +215,13 @@ orderTags(nativeTags: ITag[]): [tagId: string]: any[]
 
 Can be used to convert the normalized rating value to the 0..5 stars, where 0 an undefined rating, 1 the star the lowest rating and 5 the highest rating.
 
-```javascript
-ratingToStars(rating: number): number
+```js
+ratingToStars(rating)
 ```
+
+`rating` is a number between 0.0 and 1.0
+
+Returns the number of stars: 0, 1, 2, 3, 4 or 5.
 
 ### Options
 *   `duration`: default: `false`, if set to `true`, it will parse the whole media file if required to determine the duration.
