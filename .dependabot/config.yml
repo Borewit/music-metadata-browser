@@ -29,6 +29,16 @@ update_configs:
       - match:
           dependency_name: "@types/jasmine"
       - match:
+          dependency_name: "karma-jasmine"
+      - match:
+          dependency_name: "istanbul-instrumenter-loader"
+      - match:
+          dependency_name: "karma-browserstack-launcher"
+      - match:
+          dependency_name: "karma-coverage-istanbul-reporter"
+      - match:
+          dependency_name: "karma-jasmine-spec-reporter"
+      - match:
           dependency_name: "karma-jasmine-html-reporter"
       - match:
           dependency_name: "eslint"
