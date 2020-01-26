@@ -9,7 +9,6 @@ update_configs:
           dependency_name: "@types/node"
       - match:
           dependency_name: "music-metadata"
-          update_type: "semver:minor"
       - match:
           dependency_name: "ts-node"
       - match:
@@ -42,3 +41,5 @@ update_configs:
           dependency_name: "karma-jasmine-html-reporter"
       - match:
           dependency_name: "eslint"
+      - match:
+          dependency_name: "readable-stream"
