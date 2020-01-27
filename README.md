@@ -77,9 +77,8 @@ Support for encoding / format details:
 *   [<img src="https://raw.githubusercontent.com/hvianna/audioMotion.js/master/public/img/favicon256.png" width="40"> audioMotion](https://hvianna.github.io/audioMotion.js)
 *   [<img src="https://diffuse.sh/images/diffuse-dark.svg" alt="Diffuse" width="160">](https://diffuse.sh/)
 
-### Donation
-Not required, but would be extremely motivating.
-[PayPal.me](https://paypal.me/borewit)
+### Sponsor
+[Become a sponsor to Borewit](https://github.com/sponsors/Borewit)
 
 ## Usage
 
