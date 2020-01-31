@@ -208,7 +208,7 @@ import * as mm from 'music-metadata-browser';
 
 Utility to Converts the native tags to a dictionary index on the tag identifier
 
-```javascript
+```js
 orderTags(nativeTags: ITag[]): [tagId: string]: any[]
 ```
 
