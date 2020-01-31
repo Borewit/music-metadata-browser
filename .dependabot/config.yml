@@ -6,6 +6,8 @@ update_configs:
     update_schedule: "daily"
     automerged_updates:
       - match:
+          dependency_name: "@types/mocha"
+      - match:
           dependency_name: "@types/node"
       - match:
           dependency_name: "music-metadata"
