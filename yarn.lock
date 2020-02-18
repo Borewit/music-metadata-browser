@@ -1808,13 +1808,13 @@ file-entry-cache@^5.0.1:
   dependencies:
     flat-cache "^2.0.1"
 
-file-type@^13.1.2:
-  version "13.1.2"
-  resolved "https://registry.yarnpkg.com/file-type/-/file-type-13.1.2.tgz#0e5b72bca7569c152e2d5a84ece07e94f77f833f"
-  integrity sha512-NiHXbmclwHN38eHZfRklosbm7/W+1yacDzRCyddd0NiyuJUArQDmzJ8GPSFJGl82+I59u7sNGfcAVnJsfXJb8A==
+file-type@^14.1.2:
+  version "14.1.2"
+  resolved "https://registry.yarnpkg.com/file-type/-/file-type-14.1.2.tgz#ee7adfa2a0483d8be3a38aea58fdf2705ab00fb4"
+  integrity sha512-9NI4+QzDlEPB6OETc/FcJt8i8vNT396VweRwEwLcE07MnorWkZDopNuc+MeoYA7ArbzoK044JbaDExWys8deTQ==
   dependencies:
     readable-web-to-node-stream "^2.0.0"
-    strtok3 "^5.0.2"
+    strtok3 "^6.0.0"
     token-types "^2.0.0"
     typedarray-to-buffer "^3.1.5"
 
@@ -3149,14 +3149,14 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-music-metadata@^6.3.3:
-  version "6.3.3"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-6.3.3.tgz#415e625e36e32885aba51df0c9d875a0799c563a"
-  integrity sha512-k922/Y/DqPYUpXfmygtsC2GQMDztciQOnDFN28Cn8mX+uuw+ccCazgWmpXoNTNnXRlYXuJD/NBE6kLJTUmlKKg==
+music-metadata@^6.3.4:
+  version "6.3.4"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-6.3.4.tgz#18778e204327f4a4cc436f399945ac06015d3c51"
+  integrity sha512-vbik20L5QdZp975slS9T43JTjN+dCrqBpz2RAJHE63008TFiVLT7liqInccmY6NI/6eB2lmLDxAjWsh5hkTLag==
   dependencies:
     content-type "^1.0.4"
     debug "^4.1.0"
-    file-type "^13.1.2"
+    file-type "^14.1.2"
     media-typer "^1.1.0"
     strtok3 "^6.0.0"
     token-types "^2.0.0"
@@ -4393,15 +4393,6 @@ strip-json-comments@^3.0.1:
 strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
-
-strtok3@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-5.0.2.tgz#bb81f1f56742e16f1a30ccce5dc3d9498aa5475a"
-  integrity sha512-EFeVpFC5qDsqPEJSrIYyS/ueFBknGhgSK9cW+YAJF/cgJG/KSjoK7X6rK5xnpcLe7y1LVkVFCXWbAb+ClNKzKQ==
-  dependencies:
-    "@tokenizer/token" "^0.1.1"
-    debug "^4.1.1"
-    peek-readable "^3.1.0"
 
 strtok3@^6.0.0:
   version "6.0.0"
