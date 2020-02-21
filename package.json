@@ -101,7 +101,7 @@
     "stream-http": "^3.0.0",
     "ts-loader": "^6.2.1",
     "tslint": "^6.0.0",
-    "typescript": "^3.7.5",
+    "typescript": "^3.8.2",
     "webpack": "^4.41.6"
   },
   "dependencies": {
