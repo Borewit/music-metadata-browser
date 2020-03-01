@@ -109,7 +109,7 @@ module.exports = config => {
 
     // Increase time-outs to prevent disconnects on BrowserStack
     captureTimeout: 300000,
-    browserNoActivityTimeout: 300000,
+    browserNoActivityTimeout: 1800000,
     browserDisconnectTimeout: 300000,
     browserDisconnectTolerance: 3
   });
