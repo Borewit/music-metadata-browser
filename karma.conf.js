@@ -108,5 +108,11 @@ module.exports = config => {
     browsers: ['Chrome'],
     colors: true,
     singleRun: false,
+
+    // Increase time-outs to prevent disconnects on BrowserStack
+    captureTimeout: 300000,
+    browserNoActivityTimeout: 20000,
+    browserDisconnectTimeout: 300000,
+    browserDisconnectTolerance: 3
   });
 };
