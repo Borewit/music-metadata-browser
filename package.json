@@ -106,7 +106,7 @@
   },
   "dependencies": {
     "assert": "^2.0.0",
-    "buffer": "^5.2.1",
+    "buffer": "^5.5.0",
     "debug": "^4.0.1",
     "music-metadata": "^6.3.4",
     "readable-stream": "^3.6.0",
