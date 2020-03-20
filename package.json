@@ -83,7 +83,7 @@
   "devDependencies": {
     "@types/jasmine": "^3.5.4",
     "@types/node": "^13.7.4",
-    "coveralls": "^3.0.7",
+    "coveralls": "^3.0.11",
     "del-cli": "^3.0.0",
     "eslint": "^6.8.0",
     "filereader-stream": "^2.0.0",
