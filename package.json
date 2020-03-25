@@ -100,7 +100,7 @@
     "karma-webpack": "^4.0.2",
     "stream-http": "^3.0.0",
     "ts-loader": "^6.2.1",
-    "tslint": "^6.0.0",
+    "tslint": "^6.1.0",
     "typescript": "^3.8.3",
     "webpack": "^4.42.1"
   },
