@@ -2780,9 +2780,10 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-karma-browserstack-launcher@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/karma-browserstack-launcher/-/karma-browserstack-launcher-1.5.1.tgz#4caf4cd476a76d3c88205818d8994fc170a68fb4"
+karma-browserstack-launcher@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/karma-browserstack-launcher/-/karma-browserstack-launcher-1.5.2.tgz#e3387c7ade74f6f33725669dbae7f889f206b7aa"
+  integrity sha512-HrZlFSmjQqJGmHjHcSuR5VpxErTRafgiexHM+nZ8W38fs5wUtykeSFS8nWWXyoZjQtQ0p1O/VDQpKgRG2ntVKw==
   dependencies:
     browserstack "~1.5.1"
     browserstack-local "^1.3.7"
