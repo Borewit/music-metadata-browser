@@ -2666,10 +2666,10 @@ karma-chrome-launcher@^3.0.0:
   dependencies:
     which "^1.2.1"
 
-karma-coverage-istanbul-reporter@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/karma-coverage-istanbul-reporter/-/karma-coverage-istanbul-reporter-3.0.0.tgz#d3cb7a0b9150e3dd9dbc6dcec42e15218587bfbb"
-  integrity sha512-b/SHVcm9g0MxpwuaqM+AE7jiKbD89eGR2nkk2zCjowVX+OpXBQSaLL9vqN+L3oO0hZi2wf5f6I66/S9iEBFzHA==
+karma-coverage-istanbul-reporter@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/karma-coverage-istanbul-reporter/-/karma-coverage-istanbul-reporter-3.0.1.tgz#92ed1e2262ae3bdbfea17a2c5252f585359cbc65"
+  integrity sha512-DELhddSw2Epj91CdBualCgUFdKBQzXaGNN4kVk+hqM3BLaBxZVaudxx+TKYjbmHGtvnsoe2o6kxkMsJintuHbQ==
   dependencies:
     istanbul-lib-coverage "^3.0.0"
     istanbul-lib-report "^3.0.0"
