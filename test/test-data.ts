@@ -1,11 +1,22 @@
 export interface IProvider {
   name: string,
-  getUrl: (url: string) => string;
+  getUrl: (track: ITrack) => string;
 }
 
-export const tiuqottigeloot_vol24_Tracks = [
+export interface ITrack {
+  folder: string,
+  track: string,
+  duration: number,
+  metaData: {
+    title: string,
+    artist: string
+  }
+}
+
+export const tracks: ITrack[] = [
   {
-    url: '/Various%20Artists%20-%202009%20-%20netBloc%20Vol%2024_%20tiuqottigeloot%20%5BMP3-V2%5D/01%20-%20Diablo%20Swing%20Orchestra%20-%20Heroines.mp3',
+    folder: 'Various Artists - 2009 - netBloc Vol 24_ tiuqottigeloot [MP3-V2]',
+    track: '01 - Diablo Swing Orchestra - Heroines.mp3',
     duration: 322.612245,
     metaData: {
       title: 'Heroines',
@@ -13,7 +24,8 @@ export const tiuqottigeloot_vol24_Tracks = [
     }
   },
   {
-    url: '/Various%20Artists%20-%202008%20-%20netBloc%20Vol%2013%20-%20Color%20in%20a%20World%20of%20Monochrome%20%5BAAC-40%5D/1.02.%20Solid%20Ground.m4a',
+    folder: 'Various Artists - 2008 - netBloc Vol 13 - Color in a World of Monochrome [AAC-40]',
+    track: '1.02. Solid Ground.m4a',
     duration: 13407768 / 44100,
     metaData: {
       title: 'Solid Ground',
@@ -25,6 +37,6 @@ export const tiuqottigeloot_vol24_Tracks = [
 export const providers: { [providerId: string]: IProvider; } = {
   netlify: {
     name: 'Netlify',
-    getUrl: url => 'https://test-audio.netlify.com' + url
+    getUrl: track => 'https://test-audio.netlify.app' + '/' + encodeURI(track.folder) + '/' + encodeURI(track.track)
   }
 };

@@ -2,7 +2,7 @@ localStorage.debug = 'music-metadata-browser:*';
 import * as Stream from 'stream';
 import * as http from 'stream-http';
 import * as mm from './index';
-import { tiuqottigeloot_vol24_Tracks, providers } from '../test/test-data';
+import * as testData from '../test/test-data';
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000;
 
@@ -114,9 +114,9 @@ describe('Parse Tiuqottigeloot Vol 24 tracks', () => {
 
     describe(`Parser: ${parser.methodDescription}`, () => {
 
-      tiuqottigeloot_vol24_Tracks.forEach(track => {
+      testData.tracks.forEach(track => {
         it(`track ${track.metaData.artist} - ${track.metaData.title}`, async () => {
-          const url = providers.netlify.getUrl(track.url);
+          const url = testData.providers.netlify.getUrl(track);
           const metadata = await parser.parseUrl(url);
           expect(metadata.common.artist).toEqual(track.metaData.artist);
           expect(metadata.common.title).toEqual(track.metaData.title);
