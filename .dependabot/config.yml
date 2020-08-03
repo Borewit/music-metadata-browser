@@ -47,3 +47,11 @@ update_configs:
           dependency_name: "eslint"
       - match:
           dependency_name: "readable-stream"
+      - match:
+          dependency_name: "ts-loader"
+      - match:
+          dependency_name: "karma"
+      - match:
+          dependency_name: "jasmine-core"
+      - match:
+          dependency_name: "buffer"
