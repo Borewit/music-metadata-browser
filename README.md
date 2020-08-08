@@ -118,7 +118,7 @@ There are currently three ways to parse (read) audio tracks:
 Parse an audio file from a [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) or [File](https://developer.mozilla.org/en-US/docs/Web/API/File).
 
 ```js
-const musicMetadata = request('music-metadata-browser');
+const musicMetadata = require('music-metadata-browser');
 
 let blob;
 
