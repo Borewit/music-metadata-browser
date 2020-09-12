@@ -224,6 +224,24 @@ ratingToStars(rating)
 
 Returns the number of stars: 0, 1, 2, 3, 4 or 5.
 
+#### selectCover function
+
+Select cover image based on image type field, otherwise the first picture in file.
+
+```ts
+export function selectCover(pictures?: IPicture[]): IPicture | null
+```
+
+```js
+import * as mm from 'music-metadata';
+
+(async () => {
+  const {common} = await mm.parseFile(filePath);
+  const cover = mm.selectCover(common.picture); // pick the cover image
+}
+)();
+ ```
+
 ### Options
 *   `duration`: default: `false`, if set to `true`, it will parse the whole media file if required to determine the duration.
 *   `fileSize`: only provide this in combination with `parseStream` function.
