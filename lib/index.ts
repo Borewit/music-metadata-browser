@@ -9,7 +9,7 @@ const debug = initDebug('music-metadata-browser:main');
 
 export { IPicture, IAudioMetadata, IOptions, ITag, INativeTagDict, IChapter } from 'music-metadata/lib/type';
 
-export {  parseBuffer, parseFromTokenizer, orderTags, ratingToStars, IFileInfo } from 'music-metadata/lib/core';
+export {  parseBuffer, parseFromTokenizer, orderTags, ratingToStars, IFileInfo, selectCover } from 'music-metadata/lib/core';
 
 /**
  * Parse audio Stream
