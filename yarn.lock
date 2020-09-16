@@ -1789,10 +1789,10 @@ file-entry-cache@^5.0.1:
   dependencies:
     flat-cache "^2.0.1"
 
-file-type@^15.0.0:
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/file-type/-/file-type-15.0.0.tgz#e981077b92b7855180fc822adb857567f58080be"
-  integrity sha512-l0JCuF5F7NIybCfa9G2H0lKhhGaf0z+HJyLOmB2feknY7/HBVNyD4PLesGKLGqznwyVXGNnfpIOr+Fvca6bOEg==
+file-type@^15.0.1:
+  version "15.0.1"
+  resolved "https://registry.yarnpkg.com/file-type/-/file-type-15.0.1.tgz#54175484953d48b970c095ba8737d4e0c3a9b407"
+  integrity sha512-0LieQlSA3bWUdErNrxzxfI4rhsvNAVPBO06R8pTc1hp9SE6nhqlVyvhcaXoMmtXkBTPnQenbMPLW9X76hH76oQ==
   dependencies:
     readable-web-to-node-stream "^2.0.0"
     strtok3 "^6.0.3"
@@ -3094,14 +3094,14 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-music-metadata@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-7.2.0.tgz#98023a6fe42797dd9d1d99649ed1bd588411353d"
-  integrity sha512-EKO24c8VAKlIOWvCT0RUNvurYF672YAA25B3a3m4mOAdOiOoTPfH7XuA25n0MCOeyecRHVFi2ubDUDxcKo58kQ==
+music-metadata@^7.3.0:
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-7.3.0.tgz#c3aa4382c51758786e26efcbae9d9d2fd9cfae49"
+  integrity sha512-pLvBZh+5vhYjhQ6Ah93sVE7nPYD5XOgjoK94jvh/xyWMb20DhTRFmIwX12ZmBsO+GBbceJq9MOszdZCh29mjSA==
   dependencies:
     content-type "^1.0.4"
     debug "^4.1.0"
-    file-type "^15.0.0"
+    file-type "^15.0.1"
     media-typer "^1.1.0"
     strtok3 "^6.0.4"
     token-types "^2.0.0"
