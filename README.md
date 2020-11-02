@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Borewit/music-metadata-browser.svg?branch=master)](https://travis-ci.org/Borewit/music-metadata-browser)
+![Karma CI](https://github.com/Borewit/music-metadata-browser/workflows/Karma%20CI/badge.svg)
 [![NPM version](https://badge.fury.io/js/music-metadata-browser.svg)](https://npmjs.org/package/music-metadata-browser)
 [![npm downloads](http://img.shields.io/npm/dm/music-metadata-browser.svg)](https://npmcharts.com/compare/music-metadata-browser,jsmediatags?start=500&interval=30)
 [![dependencies Status](https://david-dm.org/Borewit/music-metadata-browser/status.svg)](https://david-dm.org/Borewit/music-metadata-browser)
