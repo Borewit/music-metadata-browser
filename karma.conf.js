@@ -61,8 +61,8 @@ module.exports = config => {
     browserStack: {
       forcelocal: true,  // force traffic through the local BrowserStack tunnel, passes flag through to BrowserStackTunnel
       project: 'music-metadata-browser',
-      timeout: 300,  // BROWSERSTACK_IDLE_TIMEOUT
-      captureTimeout: 300
+      timeout: 30,  // BROWSERSTACK_IDLE_TIMEOUT
+      captureTimeout: 30
     },
 
     // define browsers
@@ -109,9 +109,9 @@ module.exports = config => {
     colors: true,
 
     // Increase time-outs to prevent disconnects on BrowserStack
-    captureTimeout: 300000,
+    captureTimeout: 30000,
     browserNoActivityTimeout: 20000,
-    browserDisconnectTimeout: 300000,
+    browserDisconnectTimeout: 30000,
     browserDisconnectTolerance: 1
   });
 };
