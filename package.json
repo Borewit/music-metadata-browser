@@ -112,6 +112,6 @@
     "readable-stream": "^3.6.0",
     "readable-web-to-node-stream": "^3.0.0",
     "remove": "^0.1.5",
-    "typedarray-to-buffer": "^3.1.5"
+    "typedarray-to-buffer": "^4.0.0"
   }
 }
