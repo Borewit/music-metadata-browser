@@ -467,15 +467,6 @@ assert@^1.1.1:
     object-assign "^4.1.1"
     util "0.10.3"
 
-assert@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/assert/-/assert-2.0.0.tgz#95fc1c616d48713510680f2eaf2d10dd22e02d32"
-  dependencies:
-    es6-object-assign "^1.1.0"
-    is-nan "^1.2.1"
-    object-is "^1.0.1"
-    util "^0.12.0"
-
 assign-symbols@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/assign-symbols/-/assign-symbols-1.0.0.tgz#59667f41fadd4f20ccbc2bb96b8d4f7f78ec0367"
@@ -1275,7 +1266,7 @@ deep-is@^0.1.3:
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
   integrity sha1-s2nW+128E+7PUk+RsHD+7cNXzzQ=
 
-define-properties@^1.1.1, define-properties@^1.1.3:
+define-properties@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/define-properties/-/define-properties-1.1.3.tgz#cf88da6cbee26fe6db7094f61d870cbd84cee9f1"
   dependencies:
@@ -1550,10 +1541,6 @@ es-to-primitive@^1.2.0:
     is-callable "^1.1.4"
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
-
-es6-object-assign@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/es6-object-assign/-/es6-object-assign-1.1.0.tgz#c2c3582656247c39ea107cb1e6652b6f9f24523c"
 
 es6-promise@^4.0.3:
   version "4.2.8"
@@ -2477,12 +2464,6 @@ is-glob@^4.0.0, is-glob@^4.0.1, is-glob@~4.0.1:
   dependencies:
     is-extglob "^2.1.1"
 
-is-nan@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/is-nan/-/is-nan-1.2.1.tgz#9faf65b6fb6db24b7f5c0628475ea71f988401e2"
-  dependencies:
-    define-properties "^1.1.1"
-
 is-number@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-3.0.0.tgz#24fd6201a4782cf50561c810276afc7d12d71195"
@@ -3171,17 +3152,17 @@ ms@2.1.2, ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-music-metadata@^7.6.2:
-  version "7.6.2"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-7.6.2.tgz#7c46aaa32f37d3f747d653006e24c3f0efd83dc6"
-  integrity sha512-yICd18bxEhphpUPwwzDe8wP3LSsbnKzPjuIDKAYpXgYVkMl2aZxvWx6qA59ccsVC0J5FeEhbRlWiAZ6IFZZYZg==
+music-metadata@^7.6.3:
+  version "7.6.3"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-7.6.3.tgz#546beff67497dd3ee3d264af3936c645dce02b32"
+  integrity sha512-xR3I8FQ4le2Qv0WY0ISB1G61OwE3h2oTVzX3PJy51aB6IhTFuFuWE6MguaUewYzr0ieycMYaUgyb0YpJTrbsvg==
   dependencies:
     content-type "^1.0.4"
     debug "^4.3.1"
     file-type "^16.1.0"
     media-typer "^1.1.0"
-    strtok3 "^6.0.6"
-    token-types "^2.0.0"
+    strtok3 "^6.0.7"
+    token-types "^2.1.0"
 
 nan@^2.12.1:
   version "2.14.0"
@@ -3338,10 +3319,6 @@ object-copy@^0.1.0:
     copy-descriptor "^0.1.0"
     define-property "^0.2.5"
     kind-of "^3.0.3"
-
-object-is@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/object-is/-/object-is-1.0.1.tgz#0aa60ec9989a0b3ed795cf4d06f62cf1ad6539b6"
 
 object-keys@^1.0.12:
   version "1.1.1"
@@ -3562,6 +3539,11 @@ peek-readable@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/peek-readable/-/peek-readable-3.1.1.tgz#795c1429374f256e4b5ab6c584cecfd3a110024f"
   integrity sha512-QHJag0oYYPVkx6rVPEgCLEUMo6VRYbV3GUrqy00lxXJBEIw9LhPCP5MQI6mEfahJO9KYUP8W8qD8kC0V9RyZFQ==
+
+peek-readable@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/peek-readable/-/peek-readable-3.1.2.tgz#5edab75fa130e21ca290c444892faa0c208a78f0"
+  integrity sha512-aJrwgM+VdX8VoIz5EE1Mg56a3g3s93wsV0bvCDQgvFNfnTr++Ij5eQWIz9VP8QyuL9+jFHR7iNPalrc1GvK2WA==
 
 performance-now@^2.1.0:
   version "2.1.0"
@@ -4435,7 +4417,7 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-strtok3@^6.0.3, strtok3@^6.0.6:
+strtok3@^6.0.3:
   version "6.0.6"
   resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-6.0.6.tgz#65ad16df313c8dfbf075ab0bcb1edd070002fcb3"
   integrity sha512-fVxvAEKDwHFfbQO1yKxKBPfkWZyBr0Zf20UQ/mblbkAQe5h0Xdd2jDb3Mh7yRZd7LSItJ9JWgQWelpEmVoBe2g==
@@ -4443,6 +4425,15 @@ strtok3@^6.0.3, strtok3@^6.0.6:
     "@tokenizer/token" "^0.1.1"
     "@types/debug" "^4.1.5"
     peek-readable "^3.1.1"
+
+strtok3@^6.0.7:
+  version "6.0.7"
+  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-6.0.7.tgz#f8e57027b96b4dfb76fc7361f34b283c5933a832"
+  integrity sha512-D9O/aefUl/JLjfA//GQ0JX+nJMHiB5mkUQWWdjMnK+mB6PpzxDpnpajkDxuR18zYHvfXV44kDYrhT4UAeHRceg==
+  dependencies:
+    "@tokenizer/token" "^0.1.1"
+    "@types/debug" "^4.1.5"
+    peek-readable "^3.1.2"
 
 supports-color@^2.0.0:
   version "2.0.0"
@@ -4594,6 +4585,14 @@ token-types@^2.0.0:
   integrity sha512-WWvu8sGK8/ZmGusekZJJ5NM6rRVTTDO7/bahz4NGiSDb/XsmdYBn6a1N/bymUHuWYTWeuLUg98wUzvE4jPdCZw==
   dependencies:
     "@tokenizer/token" "^0.1.0"
+    ieee754 "^1.1.13"
+
+token-types@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/token-types/-/token-types-2.1.0.tgz#eba77672bcbf7a769e3f9784e66843583c6cd09f"
+  integrity sha512-1qf3CWuVNJkThHwD0E4VWJXwn3COAkEaOmqVtqHzHSznTHMUbw+3v8Teag4MBvWyGYK5Rti7aIrH06XoKpNxQg==
+  dependencies:
+    "@tokenizer/token" "^0.1.1"
     ieee754 "^1.1.13"
 
 tough-cookie@~2.5.0:
@@ -4801,7 +4800,7 @@ util@0.10.3:
   dependencies:
     inherits "2.0.1"
 
-"util@>=0.10.3 <1", util@^0.12.0:
+"util@>=0.10.3 <1":
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/util/-/util-0.12.1.tgz#f908e7b633e7396c764e694dd14e716256ce8ade"
   dependencies:
