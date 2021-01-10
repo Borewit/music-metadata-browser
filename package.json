@@ -109,10 +109,9 @@
     "webpack": "^4.44.2"
   },
   "dependencies": {
-    "assert": "^2.0.0",
     "buffer": "^6.0.3",
     "debug": "^4.0.1",
-    "music-metadata": "^7.6.2",
+    "music-metadata": "^7.6.3",
     "readable-stream": "^3.6.0",
     "readable-web-to-node-stream": "^3.0.1",
     "typedarray-to-buffer": "^4.0.0"
