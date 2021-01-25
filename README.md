@@ -1,7 +1,6 @@
 ![Karma CI](https://github.com/Borewit/music-metadata-browser/workflows/Karma%20CI/badge.svg)
 [![NPM version](https://badge.fury.io/js/music-metadata-browser.svg)](https://npmjs.org/package/music-metadata-browser)
 [![npm downloads](http://img.shields.io/npm/dm/music-metadata-browser.svg)](https://npmcharts.com/compare/music-metadata-browser,jsmediatags?start=500&interval=30)
-[![dependencies Status](https://david-dm.org/Borewit/music-metadata-browser/status.svg)](https://david-dm.org/Borewit/music-metadata-browser)
 [![Known Vulnerabilities](https://snyk.io/test/github/Borewit/music-metadata-browser/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Borewit/music-metadata-browser?targetFile=package.json)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/Borewit/music-metadata-browser.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Borewit/music-metadata-browser/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/Borewit/music-metadata-browser.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Borewit/music-metadata-browser/context:javascript)
