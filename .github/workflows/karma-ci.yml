@@ -1,8 +1,5 @@
 name: Karma CI
 on:
-  pull_request:
-    paths-ignore:
-      - '**.md'
   push:
 
 jobs:
