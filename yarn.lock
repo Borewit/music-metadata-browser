@@ -3105,10 +3105,10 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
-music-metadata@^7.6.6:
-  version "7.6.6"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-7.6.6.tgz#3bc9cc64def429cc42582066b73f8300809d25b8"
-  integrity sha512-QZ9SjWhXoLA+JcCokFblxeUcwet8nDKFOh6zghjax/Kz7LBcBhRLhoozMP1sRBEs2SopFcjVr8MSpzhpdBr6ew==
+music-metadata@^7.6.7:
+  version "7.6.7"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-7.6.7.tgz#a67341975918cd342c0adfb3794655798ee6b123"
+  integrity sha512-RUrLM7YD1k9Y4/vynO+w+DmGyu1wzLkBVIiLEh8Nf/sd+zRs8famhXvc5aIoGS5Jc2mzOtKIuKND9R+URuLtMw==
   dependencies:
     content-type "^1.0.4"
     debug "^4.3.1"
