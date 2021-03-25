@@ -2715,10 +2715,10 @@ karma-webpack@^4.0.2:
     source-map "^0.7.3"
     webpack-dev-middleware "^3.7.0"
 
-karma@^6.1.2:
-  version "6.1.2"
-  resolved "https://registry.yarnpkg.com/karma/-/karma-6.1.2.tgz#9d7394559f5deb150b3021c1860960281c3a0e50"
-  integrity sha512-mKbxgsJrt3UHBPdKfCxC2eg3lpqyt6hQRFhNWJ2sk0wUnbnLPEiCpgIgiycuLSra0vC6TaK9OPJiMGATGzgH/A==
+karma@^6.3.1:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/karma/-/karma-6.3.1.tgz#88f41e0c8b1784fa0bfaf7b1921ea69a4c6aeb4b"
+  integrity sha512-Is71g0f1dIpbLTXA+ULpev1i1soczQ1Dr8oum3zSmBFsDl3IWUlTLytsCb9os4v9xvUVWGDz0sCmLO4veANnSw==
   dependencies:
     body-parser "^1.19.0"
     braces "^3.0.2"
