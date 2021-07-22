@@ -7,7 +7,6 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
-    environment: BrowserStack
 
     steps:
 
