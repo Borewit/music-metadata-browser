@@ -29,7 +29,7 @@ export const parseNodeStream = mm.parseStream;
  */
 export async function parseReadableStream(stream: ReadableStream, fileInfo?: mm.IFileInfo | string, options?: IOptions): Promise<IAudioMetadata> {
   const ns = new ReadableWebToNodeStream(stream);
-  const res = await parseNodeStream(ns, typeof fileInfo === 'string' ? {mimeType: fileInfo} : fileInfo, options);
+  const res = await parseNodeStream(ns as any, typeof fileInfo === 'string' ? {mimeType: fileInfo} : fileInfo, options);
   await ns.close();
   return res;
 }
