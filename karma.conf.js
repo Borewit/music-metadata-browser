@@ -42,11 +42,11 @@ module.exports = config => {
       noInfo: true
     },
 
-    reporters: ['progress', 'kjhtml', 'coverage-istanbul', 'spec'],
+    reporters: ['dots', 'coverage-istanbul', 'BrowserStack'],
     // https://www.npmjs.com/package/karma-coverage-istanbul-reporter
     coverageIstanbulReporter: {
       dir: path.join(__dirname, 'coverage'),
-      reports: ['text-summary', 'lcovonly', 'html'],
+      reports: ['text-summary', 'lcovonly'],
       fixWebpackSourcePaths: true,
       'report-config': {
         html: {
