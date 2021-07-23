@@ -4,6 +4,30 @@ on:
 
 jobs:
 
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install production dependencies, check node engine compatiblity
+        run: yarn install --production=true
+
+      - name: Install development dependencies
+        run: yarn install --production=false --ignore-engines
+
+      - name: Build & Code analysis
+        run: yarn run lint
+
+      - name: Build
+        run: yarn run build
+
   test:
 
     runs-on: ubuntu-latest
@@ -19,7 +43,7 @@ jobs:
       - name: 'Checkout the repository'
         uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Compile with Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
@@ -27,23 +51,9 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - run: yarn run lint
-
       - run: yarn run travis-karma-browserstack
 
-      - name: Coveralls Parallel
+      - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.github_token }}
-          flag-name: run-${{ matrix.test_number }}
-          parallel: true
-
-  finish:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Coveralls Finished
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.github_token }}
-          parallel-finished: true
