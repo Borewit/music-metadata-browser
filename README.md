@@ -1,4 +1,4 @@
-![Karma CI](https://github.com/Borewit/music-metadata-browser/workflows/Karma%20CI/badge.svg)
+[![Karma CI](https://github.com/Borewit/music-metadata-browser/actions/workflows/karma-ci.yml/badge.svg)](https://github.com/Borewit/music-metadata-browser/actions/workflows/karma-ci.yml)
 [![NPM version](https://badge.fury.io/js/music-metadata-browser.svg)](https://npmjs.org/package/music-metadata-browser)
 [![npm downloads](http://img.shields.io/npm/dm/music-metadata-browser.svg)](https://npmcharts.com/compare/music-metadata-browser,jsmediatags?start=500&interval=30)
 [![Known Vulnerabilities](https://snyk.io/test/github/Borewit/music-metadata-browser/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Borewit/music-metadata-browser?targetFile=package.json)
