@@ -2,6 +2,7 @@
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = config => {
   config.set({
@@ -13,14 +14,22 @@ module.exports = config => {
       {pattern: '**/*.spec.ts'}
     ],
     preprocessors: {
-      '**/*.ts': 'webpack',
+      '**/*.ts': 'webpack'
     },
 
     webpack: {
       mode: 'development',
       resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.tsx', '.ts', '.js'],
+        fallback: {'buffer': require.resolve('buffer/')}
       },
+      // Ensure buffer is available
+      plugins: [
+        new webpack.ProvidePlugin({
+          process: 'process/browser',
+          Buffer: ['buffer', 'Buffer']
+        })
+      ],
       devtool: 'inline-source-map',
       module: {
         rules: [
@@ -36,7 +45,7 @@ module.exports = config => {
           }
 
         ]
-      },
+      }
     },
     webpackMiddleware: {
       noInfo: true
@@ -98,7 +107,7 @@ module.exports = config => {
     },
 
     mocha: {
-      timeout : 20000 // 20 seconds
+      timeout: 20000 // 20 seconds
     },
 
     //autoWatch: true,
@@ -106,10 +115,9 @@ module.exports = config => {
     colors: true,
 
     // Increase time-outs to prevent disconnects on BrowserStack
-    browserDisconnectTimeout : 10000, // default 2000
-    browserDisconnectTolerance : 1, // default 0
-    browserNoActivityTimeout : 4*60*1000, //default 10000
-    captureTimeout : 4*60*1000 //default 60000
-  }
-  );
+    browserDisconnectTimeout: 10000, // default 2000
+    browserDisconnectTolerance: 1, // default 0
+    browserNoActivityTimeout: 4 * 60 * 1000, //default 10000
+    captureTimeout: 4 * 60 * 1000 //default 60000
+  });
 };
