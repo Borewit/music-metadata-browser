@@ -1,9 +1,7 @@
-import { Buffer } from 'buffer';
 import * as initDebug from 'debug';
 import { IAudioMetadata, IOptions } from 'music-metadata/lib/type';
 import * as mm from 'music-metadata/lib/core';
 import { ReadableWebToNodeStream } from 'readable-web-to-node-stream';
-import * as toBuffer from 'typedarray-to-buffer';
 
 const debug = initDebug('music-metadata-browser:main');
 
@@ -41,12 +39,12 @@ export async function parseReadableStream(stream: ReadableStream, fileInfo?: mm.
  * @returns Metadata
  */
 export async function parseBlob(blob: Blob, options?: IOptions): Promise<IAudioMetadata> {
-  const buf = await convertBlobToBuffer(blob);
+  const uint8Array = await convertBlobToUint8Array(blob);
   const fileInfo: mm.IFileInfo = {mimeType: blob.type, size: blob.size};
   if ((blob as File).name) {
     fileInfo.path = (blob as File).name;
   }
-  return mm.parseBuffer(buf, {mimeType: blob.type, size: blob.size}, options);
+  return mm.parseBuffer(uint8Array, {mimeType: blob.type, size: blob.size}, options);
 }
 
 /**
@@ -82,16 +80,15 @@ export async function fetchFromUrl(audioTrackUrl: string, options?: IOptions): P
 /**
  * Convert Web API File to Node Buffer
  * @param blob - Web API Blob
- * @returns Metadata
+ * @returns Uint8Array
  */
-function convertBlobToBuffer(blob: Blob): Promise<Buffer> {
-  return new Promise<Buffer>((resolve, reject) => {
-
+function convertBlobToUint8Array(blob: Blob): Promise<Uint8Array> {
+  return new Promise<Uint8Array>((resolve, reject) => {
     const fileReader = new FileReader();
     fileReader.onloadend = event => {
       let data = (event.target as any).result;
       if (data instanceof ArrayBuffer) {
-        data = toBuffer(new Uint8Array((event.target as any).result));
+        data = new Uint8Array(data);
       }
       resolve(data);
     };

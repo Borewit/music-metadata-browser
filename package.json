@@ -115,9 +115,8 @@
   "dependencies": {
     "buffer": "^6.0.3",
     "debug": "^4.3.2",
-    "music-metadata": "^7.10.0",
+    "music-metadata": "^7.11.0",
     "readable-stream": "^3.6.0",
-    "readable-web-to-node-stream": "^3.0.2",
-    "typedarray-to-buffer": "^4.0.0"
+    "readable-web-to-node-stream": "^3.0.2"
   }
 }
