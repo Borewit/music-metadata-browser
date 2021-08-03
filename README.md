@@ -279,14 +279,6 @@ Audio format information. Defined in the TypeScript `IFormat` interface:
 
 [Common tag documentation](https://github.com/Borewit/music-metadata/blob/master/doc/common_metadata.md) is automatically generated.
 
-#### Automated testing
-
-Automated unit tests are planned to be tested with different browsers. This service has been kindly made available by [browserstack.com](http://browserstack.com/).
-<!---
-[<img src="https://svgshare.com/i/8i6.svg" width="250" alt="browserstack.com logo">](http://browserstack.com/)
--->
-Unfortunately these tests are [frequently failing due to technical difficulties](https://github.com/Borewit/music-metadata-browser/issues/46). 
-
 ## Licence
 
 (The MIT License)
