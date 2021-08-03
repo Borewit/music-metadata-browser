@@ -4,43 +4,17 @@ on:
 
 jobs:
 
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-
-      - uses: actions/checkout@v2
-
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-
-      - name: Install production dependencies, check node engine compatiblity
-        run: yarn install --production=true
-
-      - name: Install development dependencies
-        run: yarn install --production=false --ignore-engines
-
-      - name: Build & Code analysis
-        run: yarn run lint
-
-      - name: Build
-        run: yarn run build
-
   test:
-
-    runs-on: ubuntu-latest
-
+    name: Build & run Karma tests
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            browsers: 'Chrome'
+    runs-on: ${{ matrix.os }}
     steps:
 
-      - name: 'BrowserStack Env Setup'  # Invokes the setup-env action
-        uses: browserstack/github-actions/setup-env@master
-        with:
-          username:  ${{ secrets.BROWSERSTACK_USERNAME }}
-          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-
-      - name: 'Checkout the repository'
+      - name: Checkout the repository
         uses: actions/checkout@v2
 
       - name: Compile with Node.js
@@ -51,7 +25,16 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - run: yarn run travis-karma-browserstack
+      - name: Build & Code analysis
+        run: yarn run lint
+
+      - name: Compile TypeScript
+        run: yarn run build
+
+      - name: Run XVFB headless test
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run: yarn run karma-headless --browsers ${{ matrix.browsers }}
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
