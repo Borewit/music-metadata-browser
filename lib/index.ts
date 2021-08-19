@@ -20,7 +20,7 @@ export const parseNodeStream = mm.parseStream;
 
 /**
  * Parse Web API ReadableStream: https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream
- * @param stream - ReadableStream
+ * @param stream - ReadableStream (web stream according WTWG Streams Standard)
  * @param fileInfo FileInfo object or MIME-Type
  * @param options - Parsing options
  * @returns Metadata

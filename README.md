@@ -128,7 +128,7 @@ musicMetadata.parseBlob(blob).then(metadata => {
 Or with async/await if you prefer:
 ```js
 (async () => {
-  let blob;
+  let blob; // File or Blob
 
   const metadata = await musicMetadata.parseBlob(blob);
   // metadata has all the metadata found in the blob or file
@@ -140,13 +140,12 @@ Or with async/await if you prefer:
 ```js
 import * as mm from 'music-metadata-browser';
 
-mm.parseReadableStream(readableStream)
-  .then(metadata => {
-     console.log(util.inspect(metadata, { showHidden: false, depth: null }));
-     readableStream.close();
-   });
+(async () => {
+  const metadata = await mm.parseReadableStream(readableStream);
+  console.log(util.inspect(metadata, { showHidden: false, depth: null }));
+});
 ```
-Parse from a Web API [ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream).
+Parse from a Web API [ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream) (web stream according [WTWG Streams Standard](https://streams.spec.whatwg.org/)).
 
 If available, pass the mime-type and file-size. Without the mime-type, the content will be audio type will be automatically detected.
 
