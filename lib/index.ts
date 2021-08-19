@@ -39,12 +39,11 @@ export async function parseReadableStream(stream: ReadableStream, fileInfo?: mm.
  * @returns Metadata
  */
 export async function parseBlob(blob: Blob, options?: IOptions): Promise<IAudioMetadata> {
-  const uint8Array = await convertBlobToUint8Array(blob);
   const fileInfo: mm.IFileInfo = {mimeType: blob.type, size: blob.size};
-  if ((blob as File).name) {
+  if (blob instanceof File) {
     fileInfo.path = (blob as File).name;
   }
-  return mm.parseBuffer(uint8Array, {mimeType: blob.type, size: blob.size}, options);
+  return parseReadableStream(blob.stream(), {mimeType: blob.type, size: blob.size}, options);
 }
 
 /**
@@ -75,29 +74,4 @@ export async function fetchFromUrl(audioTrackUrl: string, options?: IOptions): P
   } else {
     throw new Error(`HTTP error status=${response.status}: ${response.statusText}`);
   }
-}
-
-/**
- * Convert Web API File to Node Buffer
- * @param blob - Web API Blob
- * @returns Uint8Array
- */
-function convertBlobToUint8Array(blob: Blob): Promise<Uint8Array> {
-  return new Promise<Uint8Array>((resolve, reject) => {
-    const fileReader = new FileReader();
-    fileReader.onloadend = event => {
-      let data = (event.target as any).result;
-      if (data instanceof ArrayBuffer) {
-        data = new Uint8Array(data);
-      }
-      resolve(data);
-    };
-    fileReader.onerror = error => {
-      reject(new Error(error.type));
-    };
-    fileReader.onabort = error => {
-      reject(new Error(error.type));
-    };
-    fileReader.readAsArrayBuffer(blob);
-  });
 }
