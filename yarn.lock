@@ -2192,13 +2192,13 @@ ms@2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-music-metadata@^7.11.4:
-  version "7.11.4"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-7.11.4.tgz#31db326a50de552628297571a8e078de2fe16c02"
-  integrity sha512-pEaS/vRo0zCAWJ0y5zZ5ruM8CvPPJ/VXbevRMUVkZkWN8rZAQun04xx09/3/PV0qS3nlrzPUDCRK6jDrbGVtUg==
+music-metadata@^7.11.6:
+  version "7.11.6"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-7.11.6.tgz#cf2a54a353840810b290eafd654dbe1a561e8567"
+  integrity sha512-4gRRyj1Sg/EIQoPKckFW6U0kxkMvkN+XMcCDGyIegctwyvzVQHqEkXjlNOJf56xRUB69hRRQabiKSW6x6A1zBQ==
   dependencies:
     content-type "^1.0.4"
-    debug "^4.3.2"
+    debug "^4.3.3"
     file-type "16.5.3"
     media-typer "^1.1.0"
     strtok3 "^6.2.4"
