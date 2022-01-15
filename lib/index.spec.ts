@@ -54,6 +54,14 @@ const parsers: IParserTest[] = [
     }
   },
   {
+    methodDescription: 'parseBlob() without blob.stream being implemented',
+    parseUrl: async (audioTrackUrl, options) => {
+      const blob = await getAsBlob(audioTrackUrl);
+      blob.stream = undefined; // Simulate `stream()` not being implemented by browser (e.g. Safari < 14.1)
+      return mm.parseBlob(blob, options);
+    }
+  },
+  {
     methodDescription: 'fetchFromUrl()',
     parseUrl: (audioTrackUrl, options) => {
       return mm.fetchFromUrl(audioTrackUrl, options);
