@@ -94,7 +94,7 @@ export async function fetchFromUrl(audioTrackUrl: string, options?: IOptions): P
   };
   if (response.ok) {
     if (response.body) {
-      const res = await this.parseReadableStream(response.body, fileInfo, options);
+      const res = await parseReadableStream(response.body, fileInfo, options);
       debug('Closing HTTP-readable-stream...');
       if (!response.body.locked) { // Prevent error in Firefox
         await response.body.cancel();
@@ -103,7 +103,7 @@ export async function fetchFromUrl(audioTrackUrl: string, options?: IOptions): P
       return res;
     } else {
       // Fall back on Blob
-      return this.parseBlob(await response.blob(), options);
+      return parseBlob(await response.blob(), options);
     }
   } else {
     throw new Error(`HTTP error status=${response.status}: ${response.statusText}`);
