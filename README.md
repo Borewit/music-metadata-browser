@@ -71,7 +71,7 @@ Support for encoding / format details:
 *   encoding profile (e.g. [CBR](https://en.wikipedia.org/wiki/Constant_bitrate), V0, V2)
   
 ## Online demo's
-*   [<img src="https://gitcdn.xyz/repo/Borewit/audio-tag-analyzer/master/src/assets/icon/audio-tag-analyzer.svg" width="40"> Audio Tag Analyzer](https://audio-tag-analyzer.netlify.com/)
+*   [<img src="https://raw.githubusercontent.com/Borewit/audio-tag-analyzer/master/src/assets/icon/audio-tag-analyzer.svg" width="40"> Audio Tag Analyzer](https://audio-tag-analyzer.netlify.com/)
 *   [<img src="https://cdn.sanity.io/images/3do82whm/next/ba8c847f13a5fa39d88f8bc9b7846b7886531b18-2500x2500.svg" width="40"> Webamp](https://webamp.org/)
 *   [<img src="https://raw.githubusercontent.com/hvianna/audioMotion.js/master/public/img/favicon256.png" width="40"> audioMotion](https://hvianna.github.io/audioMotion.js)
 *   [<img src="https://diffuse.sh/images/diffuse-dark.svg" alt="Diffuse" width="160">](https://diffuse.sh/)
