@@ -91,7 +91,7 @@
     "eslint": "^8.8.0",
     "filereader-stream": "^2.0.0",
     "istanbul-instrumenter-loader": "^3.0.1",
-    "jasmine-core": "^4.0.0",
+    "jasmine-core": "^4.0.1",
     "karma": "^6.3.15",
     "karma-chrome-launcher": "^3.0.0",
     "karma-coverage-istanbul-reporter": "^3.0.3",
