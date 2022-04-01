@@ -44,7 +44,7 @@ export async function parseBlob(blob: Blob, options?: IOptions): Promise<IAudioM
     fileInfo.path = (blob as File).name;
   }
 
-  const stream = blob.stream ? blob.stream() : convertBlobToReadableStream(blob);
+  const stream = (blob.stream ? blob.stream() : convertBlobToReadableStream(blob)) as ReadableStream<any>;
   return parseReadableStream(stream, {mimeType: blob.type, size: blob.size}, options);
 }
 
