@@ -75,6 +75,7 @@ Support for encoding / format details:
 *   [<img src="https://cdn.sanity.io/images/3do82whm/next/ba8c847f13a5fa39d88f8bc9b7846b7886531b18-2500x2500.svg" width="40"> Webamp](https://webamp.org/)
 *   [<img src="https://raw.githubusercontent.com/hvianna/audioMotion.js/master/public/img/favicon256.png" width="40"> audioMotion](https://hvianna.github.io/audioMotion.js)
 *   [<img src="https://diffuse.sh/images/diffuse-dark.svg" alt="Diffuse" width="160">](https://diffuse.sh/)
+*   ![](https://raw.githubusercontent.com/tgambet/musicsource/main/src/assets/favicon-32x32.png) [MusicSource](https://github.com/tgambet/musicsource)
 
 ### Sponsor
 [Become a sponsor to Borewit](https://github.com/sponsors/Borewit)
