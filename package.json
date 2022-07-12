@@ -113,7 +113,7 @@
     "buffer": "^6.0.3",
     "debug": "^4.3.4",
     "music-metadata": "^7.12.4",
-    "readable-stream": "^4.0.0",
+    "readable-stream": "^4.1.0",
     "readable-web-to-node-stream": "^3.0.2"
   }
 }
