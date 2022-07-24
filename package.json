@@ -79,14 +79,12 @@
     "karma-firefox": "karma start --browsers Firefox",
     "karma-once": "karma start --browsers Chrome --single-run",
     "karma-headless": "karma start --single-run --reporters coverage-istanbul,spec,progress",
-    "post-coveralls": "coveralls < coverage/lcov.info",
     "post-codacy": " codacy-coverage < coverage/lcov.info"
   },
   "devDependencies": {
     "@tokenizer/token": "^0.3.0",
     "@types/jasmine": "^4.0.2",
     "@types/node": "^18.0.1",
-    "coveralls": "^3.1.1",
     "del-cli": "^5.0.0",
     "eslint": "^8.20.0",
     "filereader-stream": "^2.0.0",
