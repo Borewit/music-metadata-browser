@@ -51,7 +51,7 @@ module.exports = config => {
       noInfo: true
     },
 
-    reporters: ['dots', 'coverage-istanbul', 'BrowserStack'],
+    reporters: ['dots', 'coverage-istanbul'],
     // https://www.npmjs.com/package/karma-coverage-istanbul-reporter
     coverageIstanbulReporter: {
       dir: path.join(__dirname, 'coverage'),
