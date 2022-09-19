@@ -2078,10 +2078,10 @@ ms@2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-music-metadata@^7.12.6:
-  version "7.12.6"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-7.12.6.tgz#a13739c518358c7d3ce3208b372a7ff304ea117c"
-  integrity sha512-TSDdSZ1E96dCze6sRp9rnib4LFRf6Lon3qfFPZbUyn7BUz3/XyT/ciWfxFEZKEeexmAkIfhBAwH62gfO2QSdlA==
+music-metadata@^7.13.0:
+  version "7.13.0"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-7.13.0.tgz#796415621f274e17f5ec04d7224d5503f18157ef"
+  integrity sha512-EoDmAoK84Z9xarNEgjE7YQ4x7cIwHI9kOI3RdA2QlEHCsqBvBuBbIcP3vONGO/SBiPhXe5FF+IVAW+1T2owjEA==
   dependencies:
     "@tokenizer/token" "^0.3.0"
     content-type "^1.0.4"
@@ -2089,7 +2089,7 @@ music-metadata@^7.12.6:
     file-type "^16.5.4"
     media-typer "^1.1.0"
     strtok3 "^6.3.0"
-    token-types "^4.2.0"
+    token-types "^4.2.1"
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -2805,10 +2805,10 @@ toidentifier@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
 
-token-types@^4.1.1, token-types@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/token-types/-/token-types-4.2.0.tgz#b66bc3d67420c6873222a424eee64a744f4c2f13"
-  integrity sha512-P0rrp4wUpefLncNamWIef62J0v0kQR/GfDVji9WKY7GDCWy5YbVSrKUTam07iWPZQGy0zWNOfstYTykMmPNR7w==
+token-types@^4.1.1, token-types@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/token-types/-/token-types-4.2.1.tgz#0f897f03665846982806e138977dbe72d44df753"
+  integrity sha512-6udB24Q737UD/SDsKAHI9FCRP7Bqc9D/MQUV02ORQg5iskjtLJlZJNdN4kKtcdtwCeWIwIHDGaUsTsCCAa8sFQ==
   dependencies:
     "@tokenizer/token" "^0.3.0"
     ieee754 "^1.2.1"
