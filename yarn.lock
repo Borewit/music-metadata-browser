@@ -757,7 +757,7 @@ colorette@^2.0.14:
   resolved "https://registry.yarnpkg.com/colorette/-/colorette-2.0.16.tgz#713b9af84fdb000139f04546bd4a93f62a5085da"
   integrity sha512-hUewv7oMjCp+wkBv5Rm0v87eJhq4woh5rSR+42YSQJKecCqgIqNkZ6lAlQms/BwHPJA5NKMRlpxPRv0n8HQW6g==
 
-colors@1.4.0:
+colors@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/colors/-/colors-1.4.0.tgz#c50491479d4c1bdaed2c9ced32cf7c7dc2360f78"
   integrity sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==
@@ -1796,12 +1796,12 @@ karma-jasmine@^5.1.0:
   dependencies:
     jasmine-core "^4.1.0"
 
-karma-spec-reporter@^0.0.34:
-  version "0.0.34"
-  resolved "https://registry.yarnpkg.com/karma-spec-reporter/-/karma-spec-reporter-0.0.34.tgz#7dc79cdc76b0e37f17006921439600ae3c648669"
-  integrity sha512-l5H/Nh9q4g2Ysx2CDU2m+NIPyLQpCVbk9c4V02BTZHw3NM6RO1dq3eRpKXCSSdPt4RGfhHk8jDt3XYkGp+5PWg==
+karma-spec-reporter@^0.0.35:
+  version "0.0.35"
+  resolved "https://registry.yarnpkg.com/karma-spec-reporter/-/karma-spec-reporter-0.0.35.tgz#845d9f8b047a452f36fca493d63a72bcc3c865c7"
+  integrity sha512-ejUIU6yzD2bgcn573ypcRfF1IDnLwkxnSMqXsmmvF/PiOwmQgaLRr8H8blBZmrgxH8qhp+W90Q94h16kEQDWzw==
   dependencies:
-    colors "1.4.0"
+    colors "^1.4.0"
 
 karma-webpack@^5.0.0:
   version "5.0.0"
