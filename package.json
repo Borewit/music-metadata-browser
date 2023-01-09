@@ -110,7 +110,7 @@
   "dependencies": {
     "buffer": "^6.0.3",
     "debug": "^4.3.4",
-    "music-metadata": "^7.13.0",
+    "music-metadata": "^7.13.1",
     "readable-stream": "^4.2.0",
     "readable-web-to-node-stream": "^3.0.2"
   }
