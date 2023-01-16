@@ -2054,10 +2054,10 @@ ms@2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-music-metadata@^7.13.0:
-  version "7.13.0"
-  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-7.13.0.tgz#796415621f274e17f5ec04d7224d5503f18157ef"
-  integrity sha512-EoDmAoK84Z9xarNEgjE7YQ4x7cIwHI9kOI3RdA2QlEHCsqBvBuBbIcP3vONGO/SBiPhXe5FF+IVAW+1T2owjEA==
+music-metadata@^7.13.3:
+  version "7.13.3"
+  resolved "https://registry.yarnpkg.com/music-metadata/-/music-metadata-7.13.3.tgz#6b32f4ca930ba44b1ff3890ecb995cd5b36d0f47"
+  integrity sha512-qxh+Xgy1qHhrgW4XnXu5JUxMmRNdQXDEeIZLGXpapOi96rRCocXn498L+y2P7t6NJXFK8e3Shv2tu0dC/HF/3g==
   dependencies:
     "@tokenizer/token" "^0.3.0"
     content-type "^1.0.4"
