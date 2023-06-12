@@ -84,7 +84,7 @@
   "devDependencies": {
     "@tokenizer/token": "^0.3.0",
     "@types/jasmine": "^4.3.0",
-    "@types/node": "^18.14.6",
+    "@types/node": "^20.3.0",
     "del-cli": "^5.0.0",
     "eslint": "^8.35.0",
     "filereader-stream": "^2.0.0",
